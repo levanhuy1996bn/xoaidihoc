@@ -1,0 +1,13 @@
+# Thư viện cài bằng npm install (không đẩy lên GitHub)
+node_modules/
+
+# Bản build (Vercel tự build lại)
+dist/
+
+# Vercel CLI
+.vercel/
+
+# Hệ điều hành / IDE
+.DS_Store
+.idea/
+*.log
