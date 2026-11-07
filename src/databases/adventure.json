@@ -1,0 +1,75 @@
+{
+  "_ghi_chu": "Xoài phiêu lưu. Đảo mở theo tổng số sao (need). games = id trò trong games.json hiện trên đảo. Nhiệm vụ làm mới mỗi ngày; metric: correct (câu đúng), stars (sao nhận được), levels (màn đã vượt), care (lần chăm thú cưng). Huy hiệu tính trên tổng: correct, stars, levels, islands, pets, petLevel, streak. Trong texts, {tên} được thay bằng giá trị; câu đọc to dùng 'con' thay cho 'bé'.",
+  "islands": [
+    { "id": "beginner", "name": "Đảo Khởi Đầu", "emoji": "🏝️", "description": "Nơi bắt đầu hành trình", "need": 0, "color": "#ddf5e7", "games": ["alphabet", "numbers", "colors", "shapes"] },
+    { "id": "forest", "name": "Rừng Tri Thức", "emoji": "🌳", "description": "Gặp các con vật, rau củ và thời tiết", "need": 15, "color": "#e8f3d9", "games": ["zoo", "produce", "body", "weather"] },
+    { "id": "ocean", "name": "Đại Dương Kỳ Bí", "emoji": "🐬", "description": "Những câu đố cần suy nghĩ", "need": 40, "color": "#ddf0ff", "games": ["odd", "shadow", "pattern", "jigsaw", "missing"] },
+    { "id": "castle", "name": "Lâu Đài Ánh Sao", "emoji": "🏰", "description": "Tập làm việc nhỏ mỗi ngày", "need": 80, "color": "#f2e4ff", "games": ["routine", "market", "room", "traffic"] },
+    { "id": "space", "name": "Vũ Trụ Xoài", "emoji": "🚀", "description": "Đếm, đua và xem ảnh kỷ niệm", "need": 150, "color": "#e6e3ff", "games": ["animals", "drag", "race", "gallery"] }
+  ],
+  "missions": [
+    { "id": "correct", "emoji": "📚", "title": "Chăm học", "text": "Trả lời đúng 5 câu", "metric": "correct", "target": 5, "reward": 10 },
+    { "id": "levels", "emoji": "🏁", "title": "Vượt màn", "text": "Vượt qua 2 màn chơi", "metric": "levels", "target": 2, "reward": 10 },
+    { "id": "stars", "emoji": "⭐", "title": "Hái sao", "text": "Nhận 10 ngôi sao", "metric": "stars", "target": 10, "reward": 15 },
+    { "id": "care", "emoji": "💗", "title": "Chăm thú cưng", "text": "Cho thú cưng ăn hoặc chơi", "metric": "care", "target": 1, "reward": 5 }
+  ],
+  "pets": [
+    { "id": "cat", "name": "Mèo Miu", "emoji": "🐱", "price": 0, "rarity": "Bạn đầu tiên" },
+    { "id": "dog", "name": "Cún Bông", "emoji": "🐶", "price": 30, "rarity": "Thường" },
+    { "id": "rabbit", "name": "Thỏ Trắng", "emoji": "🐰", "price": 50, "rarity": "Hiếm" },
+    { "id": "panda", "name": "Gấu Trúc", "emoji": "🐼", "price": 100, "rarity": "Siêu hiếm" },
+    { "id": "dragon", "name": "Rồng Con", "emoji": "🐲", "price": 200, "rarity": "Huyền thoại" }
+  ],
+  "items": [
+    { "id": "food", "name": "Thức ăn", "emoji": "🍎", "price": 5, "description": "Cho thú cưng ăn" },
+    { "id": "toy", "name": "Đồ chơi", "emoji": "🧸", "price": 10, "description": "Chơi cùng thú cưng" },
+    { "id": "gift", "name": "Hộp quà", "emoji": "🎁", "price": 25, "description": "Thú cưng lên cấp" }
+  ],
+  "start": { "coins": 0, "food": 3, "toy": 1, "gift": 0 },
+  "maxHappy": 3,
+  "badges": [
+    { "id": "first", "emoji": "👣", "title": "Bước đầu tiên", "text": "Trả lời đúng 1 câu", "metric": "correct", "target": 1 },
+    { "id": "learner", "emoji": "📖", "title": "Chăm chỉ", "text": "Trả lời đúng 30 câu", "metric": "correct", "target": 30 },
+    { "id": "stars", "emoji": "🌟", "title": "Ngôi sao nhỏ", "text": "Có 50 ngôi sao", "metric": "stars", "target": 50 },
+    { "id": "levels", "emoji": "🏁", "title": "Vượt ải", "text": "Vượt qua 20 màn", "metric": "levels", "target": 20 },
+    { "id": "explorer", "emoji": "🗺️", "title": "Nhà thám hiểm", "text": "Mở 3 hòn đảo", "metric": "islands", "target": 3 },
+    { "id": "friends", "emoji": "🐾", "title": "Bạn đồng hành", "text": "Có 3 thú cưng", "metric": "pets", "target": 3 },
+    { "id": "carer", "emoji": "💝", "title": "Chủ nuôi giỏi", "text": "Thú cưng lên cấp 3", "metric": "petLevel", "target": 3 },
+    { "id": "streak", "emoji": "🔥", "title": "Ngày nào cũng học", "text": "Học 5 ngày liền", "metric": "streak", "target": 5 }
+  ],
+  "tabs": [
+    { "id": "map", "emoji": "🗺️", "label": "Đảo" },
+    { "id": "missions", "emoji": "🎯", "label": "Nhiệm vụ" },
+    { "id": "pet", "emoji": "🐾", "label": "Thú cưng" },
+    { "id": "shop", "emoji": "🛍️", "label": "Cửa hàng" },
+    { "id": "badges", "emoji": "🏆", "label": "Huy hiệu" }
+  ],
+  "texts": {
+    "kicker": "🥭 XOÀI PHIÊU LƯU",
+    "title": "Cùng Xoài khám phá!",
+    "welcome": "Cùng Xoài đi phiêu lưu nào!",
+    "nextIsland": "Còn {need} ⭐ nữa tới {name}",
+    "allIslands": "Con đã mở hết các hòn đảo! 🎉",
+    "islandHint": "Chạm vào đảo để xem có trò gì nhé",
+    "islandOpen": "{name}. {description}",
+    "islandLocked": "Cần thêm {need} ngôi sao nữa để mở {name}",
+    "islandNew": "Con đã mở được {name}!",
+    "missionsHint": "Làm xong nhiệm vụ để nhận xu 🪙",
+    "missionTodo": "{text}. Con đã làm được {progress} trên {target}",
+    "missionReady": "Xong rồi! Chạm vào nút nhận thưởng nhé",
+    "reward": "Con nhận được {coins} xu!",
+    "allDone": "Hôm nay con làm xong hết nhiệm vụ rồi! Giỏi quá!",
+    "petCare": "Chăm {pet} mỗi ngày nhé",
+    "food": "{pet} ăn ngon quá!",
+    "toy": "{pet} chơi vui quá!",
+    "gift": "{pet} lên cấp {level} rồi!",
+    "full": "{pet} vui lắm rồi, mai mình chơi tiếp nhé!",
+    "noItem": "Con hết {item} rồi. Vào cửa hàng mua thêm nhé!",
+    "notEnough": "Con chưa đủ xu rồi. Làm nhiệm vụ để có thêm xu nhé!",
+    "adopt": "Con đã nhận nuôi {pet}!",
+    "choose": "{pet} đi cùng con nhé!",
+    "bought": "Con đã mua {item}!",
+    "badgeOk": "Huy hiệu {title}. Con đã đạt được rồi!",
+    "badgeTodo": "Huy hiệu {title}. {text} nhé"
+  }
+}

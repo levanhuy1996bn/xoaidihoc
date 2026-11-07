@@ -1,7 +1,7 @@
 {
-  "_ghi_chu": "Các câu khen/nhắc dùng chung. {level}, {stars} sẽ được thay bằng số màn, số sao. Câu đọc to nên dùng 'con' thay cho 'bé'.",
+  "_ghi_chu": "Các câu khen/nhắc dùng chung. {level} sẽ được thay bằng số màn. Câu đọc to nên dùng 'con' thay cho 'bé'.",
   "praise": "Đúng rồi! Con giỏi quá!",
   "tryAgain": "Chưa đúng, mình thử lại nhé",
-  "levelDone": "Hoàn thành màn {level}! Con được {stars} sao",
+  "levelDone": "Giỏi quá! Con hoàn thành màn {level}",
   "milestone": "Con đã vượt qua {level} màn! Thưởng con một món quà 🎁"
 }

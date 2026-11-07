@@ -6,6 +6,7 @@ import BottomNav from "./components/BottomNav";
 import { home, sections, games as gameList } from "./databases/games.json";
 import { className as familyClassName } from "./databases/family.json";
 import { getProgress, clearedCount, levelsCleared, resetProgress } from "./levels/progress";
+import { fill } from "./utils";
 import Alphabet from "./games/Alphabet";
 import Numbers from "./games/Numbers";
 import Colors from "./games/Colors";
@@ -18,6 +19,7 @@ import OddOneOut from "./games/OddOneOut";
 import ShadowMatch from "./games/ShadowMatch";
 import Patterns from "./games/Patterns";
 import Jigsaw from "./games/Jigsaw";
+import MissingNumbers from "./games/MissingNumbers";
 import DailyRoutine from "./games/DailyRoutine";
 import Supermarket from "./games/Supermarket";
 import CleanRoom from "./games/CleanRoom";
@@ -27,16 +29,19 @@ import DragNumbers from "./games/DragNumbers";
 import Race from "./games/Race";
 import Gallery from "./games/Gallery";
 import FamilyClass from "./family/FamilyClass";
+import Adventure from "./adventure/Adventure";
+import { track, resetAdventure, missionsDone, loadSave } from "./adventure/store";
+import adventure from "./databases/adventure.json";
 
 // Nối id trong games.json với component của màn. Trò có levels: true dùng bản đồ màn + 1–3 sao.
 const COMPONENTS = {
   alphabet: Alphabet, numbers: Numbers, colors: Colors, shapes: Shapes, zoo: AnimalWorld,
   produce: FruitsVeggies, body: Body, weather: Weather,
-  odd: OddOneOut, shadow: ShadowMatch, pattern: Patterns, jigsaw: Jigsaw,
+  odd: OddOneOut, shadow: ShadowMatch, pattern: Patterns, jigsaw: Jigsaw, missing: MissingNumbers,
   routine: DailyRoutine, market: Supermarket, room: CleanRoom, traffic: Traffic,
   animals: AnimalCounting, drag: DragNumbers, race: Race, gallery: Gallery,
 };
-const LEVEL_GAMES = ["odd", "shadow", "pattern", "jigsaw", "routine", "market", "room", "traffic"];
+const LEVEL_GAMES = ["odd", "shadow", "pattern", "jigsaw", "missing", "routine", "market", "room", "traffic"];
 const games = gameList.filter((g) => COMPONENTS[g.id]).map((g) => ({ ...g, Component: COMPONENTS[g.id] }));
 
 function readNumber(key) {
@@ -59,15 +64,30 @@ export default function App() {
 
   function speak(text) {
     if(!("speechSynthesis" in window)) return;
-    window.speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = "vi-VN"; utterance.rate = 0.82; utterance.pitch = 1.12;
-    const viVoice = window.speechSynthesis.getVoices().find(v => v.lang?.toLowerCase().replace("_","-").startsWith("vi"));
-    if (viVoice) utterance.voice = viVoice;
-    window.speechSynthesis.speak(utterance);
+    const synth = window.speechSynthesis;
+    const make = (useVoice) => {
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = "vi-VN"; u.rate = 0.82; u.pitch = 1.12;
+      const viVoice = useVoice && synth.getVoices().find(v => v.lang?.toLowerCase().replace("_","-").startsWith("vi"));
+      if (viVoice) u.voice = viVoice;
+      return u;
+    };
+    synth.cancel();
+    synth.resume(); // Chrome trên máy tính đôi khi bị "kẹt" ở trạng thái tạm dừng
+    const u = make(true);
+    let started = false;
+    u.onstart = () => { started = true; };
+    synth.speak(u);
+    // Sau 1,5 giây vẫn chưa đọc được thì thử lại một lần, để trình duyệt tự chọn giọng tiếng Việt
+    clearTimeout(window.__speakRetry);
+    window.__speakRetry = setTimeout(() => {
+      if (started || synth.speaking) return;
+      synth.cancel(); synth.resume(); synth.speak(make(false));
+    }, 1500);
   }
-  function correct() { setStars(s=>s+1); setCompleted(c=>c+1); }
-  function addStars(n) { setStars(s=>s+n); }
+  // track(): đếm cho nhiệm vụ hằng ngày của Xoài phiêu lưu
+  function correct() { setStars(s=>s+1); setCompleted(c=>c+1); track("correct"); track("stars"); }
+  function addStars(n) { setStars(s=>s+n); track("stars", n); }
   function goHome() { setGame(null); setPage("home"); }
   const current = games.find(g=>g.id===game);
   useEffect(()=>{ window.scrollTo(0,0); },[game,page]);
@@ -86,14 +106,15 @@ export default function App() {
         <button className="back-button" onClick={()=>setGame(null)}><ArrowLeft size={18}/> Quay lại</button>
         <div className="game-heading"><span>{current?.emoji}</span><div><h1>{current?.title}</h1><p>{current?.group==="memory" ? current.subtitle : "Cùng học mà chơi, chơi mà học nhé!"}</p></div></div>
         {current && <current.Component key={current.id} speak={speak} onCorrect={correct} onStars={addStars}/>}
-      </> : page==="progress" ? <>
+      </> : page==="adventure" ? <Adventure stars={stars} completed={completed} speak={speak} games={games} onPlay={setGame}/>
+      : page==="progress" ? <>
         <div className="welcome-banner"><div><span className="eyebrow">BÉ ĐÃ LÀM ĐƯỢC</span><h1>Con thật tuyệt vời! 🌟</h1><p>Mỗi ngày học một chút, con sẽ giỏi hơn.</p></div><div className="welcome-art">🏆</div></div>
         <div className="stats-grid">
           <div className="stat-card"><Star fill="#FFB72B" color="#FFB72B"/><strong>{stars}</strong><span>Ngôi sao</span></div>
           <div className="stat-card"><Sparkles color="#8B69D8"/><strong>{completed}</strong><span>Lượt trả lời đúng</span></div>
           <div className="stat-card"><Flag color="#4ba5dc"/><strong>{levelsCleared()}</strong><span>Màn đã vượt qua</span></div>
         </div>
-        <button className="primary-button" onClick={()=>{setStars(0);setCompleted(0);resetProgress();}}>Đặt lại thành tích <RotateCcw size={16}/></button>
+        <button className="primary-button" onClick={()=>{setStars(0);setCompleted(0);resetProgress();resetAdventure();}}>Đặt lại thành tích <RotateCcw size={16}/></button>
       </> : <>
         <div className="mode-tabs top-tabs" role="tablist">
           <button role="tab" aria-selected={space==="learn"} className={space==="learn"?"active":""} onClick={()=>changeSpace("learn")}><span>🥭</span>Xoài Vui Học</button>
@@ -105,7 +126,10 @@ export default function App() {
           <div className="welcome-art">{home.art}</div>
           <span className="sparkle sparkle-one">✨</span><span className="sparkle sparkle-two">⭐</span>
         </div>
-        <div className="daily-row"><div><span className="daily-icon">{home.dailyIcon}</span><div><b>{home.dailyTitle}</b><small>{home.dailySubtitle}</small></div></div><div className="daily-stars">⭐ {stars}</div></div>
+        <button className="daily-row adv-entry" onClick={()=>setPage("adventure")}>
+          <div><span className="daily-icon">{adventure.pets.find(p=>p.id===loadSave().pet)?.emoji || home.dailyIcon}</span><div><b>{home.dailyTitle}</b><small>{fill(home.dailySubtitle, { done: missionsDone(), total: adventure.missions.length })}</small></div></div>
+          <div className="daily-stars">⭐ {stars}</div>
+        </button>
         {sections.map((s, i) => {
           const list = games.filter(g=>g.group===s.group);
           if (!list.length) return null;

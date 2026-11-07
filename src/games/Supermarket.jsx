@@ -3,6 +3,7 @@ import data from "../databases/supermarket.json";
 import { pickN, shuffle, randInt, tierFor } from "../utils";
 import LevelGame from "../components/LevelGame";
 import { TRY_AGAIN } from "../components/ChoiceQuiz";
+import { playCorrect, playWrong } from "../components/sounds";
 
 const cap = (s) => s[0].toUpperCase() + s.slice(1);
 const byEmoji = (e) => data.products.find((p) => p.e === e);
@@ -38,7 +39,7 @@ function Board({ cfg, speak, onFinish }) {
   function wrong(p, text) {
     mistakes.current += 1;
     setShake(p.e); setTimeout(() => setShake(null), 400);
-    setNote(text); speak(TRY_AGAIN);
+    setNote(text); playWrong(); speak(TRY_AGAIN);
   }
 
   function take(p) {
@@ -49,11 +50,9 @@ function Board({ cfg, speak, onFinish }) {
     const next = { ...basket, [p.e]: doneCount(need) + 1 };
     setBasket(next);
     setNote("");
-    speak(cap(p.n));
-    if (cfg.list.every((x) => (next[x.e] || 0) >= x.qty)) {
-      setTimeout(() => speak("Con mua đủ rồi! Giỏi quá!"), 800);
-      onFinish(mistakes.current);
-    }
+    // món cuối: không đọc gì nữa, LevelGame phát nhạc rồi khen hoàn thành màn
+    if (cfg.list.every((x) => (next[x.e] || 0) >= x.qty)) return onFinish(mistakes.current);
+    playCorrect(); speak(cap(p.n));
   }
 
   return <div>

@@ -2,6 +2,8 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import messages from "../databases/messages.json";
 import { makeRng, fill } from "../utils";
 import { getProgress, saveStars, clearedCount, starTotal } from "../levels/progress";
+import { track } from "../adventure/store";
+import { playWin } from "./sounds";
 
 /**
  * Khung chung cho các trò có màn (kiểu Candy Crush):
@@ -9,11 +11,12 @@ import { getProgress, saveStars, clearedCount, starTotal } from "../levels/progr
  * - makeLevel(level, rng): sinh cấu hình màn theo số màn (độ khó tăng dần, vô tận)
  *   và phải có `allow` = số lần sai tối đa để vẫn được 2 sao.
  * - Board: component chơi một màn, gọi onFinish(soLanSai) NGAY khi bé làm xong.
- *   Kết quả được lưu ngay lập tức; màn hình sao hiện sau DONE_DELAY để bé kịp nghe lời khen.
+ *   Kết quả được lưu ngay lập tức và phát nhạc chúc mừng; màn hình sao + câu "Giỏi quá! Con hoàn thành màn…"
+ *   hiện sau DONE_DELAY. Board không cần tự đọc câu khen lúc xong màn (sẽ bị chồng tiếng).
  */
 const DONE_DELAY = 2000;
 
-export default function LevelGame({ id, makeLevel, Board, speak, onStars, intro }) {
+export default function LevelGame({ id, makeLevel, Board, speak, onStars, intro, doneDelay = DONE_DELAY }) {
   const [progress, setProgress] = useState(() => getProgress(id));
   const [view, setView] = useState("map");
   const [level, setLevel] = useState(1);
@@ -33,7 +36,9 @@ export default function LevelGame({ id, makeLevel, Board, speak, onStars, intro 
   function finish(mistakes) {
     const allow = cfg.allow ?? 2;
     const stars = mistakes === 0 ? 3 : mistakes <= allow ? 2 : 1;
+    playWin(); // nhạc chúc mừng ngay khi xong; lời khen đọc sau, không bị chồng tiếng
     const gained = saveStars(id, level, stars);
+    track("levels"); // nhiệm vụ "Vượt màn" của Xoài phiêu lưu
     setProgress(getProgress(id));
     if (gained) onStars(gained);
     const milestone = level % 10 === 0;
@@ -42,7 +47,7 @@ export default function LevelGame({ id, makeLevel, Board, speak, onStars, intro 
     timer.current = setTimeout(() => {
       setView("done");
       speak(fill(messages.levelDone, { level, stars }) + (milestone ? ". " + fill(messages.milestone, { level }) : ""));
-    }, DONE_DELAY);
+    }, doneDelay);
   }
 
   if (view === "play") {

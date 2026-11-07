@@ -1,0 +1,18 @@
+{
+  "_ghi_chu": "Điền số còn thiếu: dãy số LIÊN TIẾP tăng dần, có thể thiếu nhiều ô (vd. 1 _ 3 _ 5 6 _ 8 9), không bao giờ thiếu 2 ô liền nhau. tiers: từ màn 'from' trở đi dùng cấu hình đó. min/max = khoảng số; length = độ dài dãy; startAtOne = luôn bắt đầu từ 1; blanks = số ô trống; extra = số thẻ thừa (luôn ít nhất 2 để con phải chọn); dots = hiện chấm gợi ý; allow = số lần sai tối đa để vẫn được 2 sao. Giá trị dạng [a, b] nghĩa là chọn ngẫu nhiên từ a đến b.",
+  "tiers": [
+    { "from": 1, "min": 1, "max": 5, "length": 5, "startAtOne": true, "blanks": 1, "extra": 2, "dots": true, "allow": 1 },
+    { "from": 3, "min": 1, "max": 6, "length": [5, 6], "startAtOne": true, "blanks": 2, "extra": 2, "dots": true, "allow": 1 },
+    { "from": 6, "min": 1, "max": 7, "length": [6, 7], "startAtOne": true, "blanks": 2, "extra": 2, "dots": false, "allow": 1 },
+    { "from": 9, "min": 1, "max": 9, "length": [7, 9], "startAtOne": true, "blanks": [2, 3], "extra": 2, "dots": false, "allow": 2 },
+    { "from": 13, "min": 1, "max": 15, "length": [6, 8], "startAtOne": false, "blanks": [2, 3], "extra": [2, 3], "dots": false, "allow": 2 },
+    { "from": 18, "min": 1, "max": 20, "length": [7, 9], "startAtOne": false, "blanks": 3, "extra": 3, "dots": false, "allow": 2 }
+  ],
+  "themes": [
+    { "id": "train", "icon": "🚂", "ask": "Toa tàu bị thiếu số mấy?" },
+    { "id": "caterpillar", "icon": "🐛", "ask": "Đốt sâu bị thiếu số mấy?" },
+    { "id": "stairs", "icon": "🐸", "ask": "Bậc thang bị thiếu số mấy?" },
+    { "id": "houses", "icon": "🏠", "ask": "Ngôi nhà bị thiếu số mấy?" }
+  ],
+  "colors": ["#F56B6B", "#FF9B55", "#FFC44D", "#65C98A", "#65B9F2", "#B28AE8", "#F7A1C4"]
+}

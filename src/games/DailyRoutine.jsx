@@ -30,11 +30,9 @@ function Board({ cfg, speak, onFinish }) {
     if (done || steps.indexOf(step) < placed) return;
     if (step === steps[placed]) {
       setPlaced(placed + 1);
-      speak(step.n);
-      if (placed + 1 === steps.length) {
-        setTimeout(() => speak("Con làm đúng thứ tự rồi! Giỏi quá!"), 900);
-        onFinish(mistakes.current);
-      }
+      // bước cuối: không đọc, LevelGame phát nhạc chúc mừng rồi khen hoàn thành màn
+      if (placed + 1 === steps.length) onFinish(mistakes.current);
+      else speak(step.n);
     } else {
       mistakes.current += 1;
       setShake(step.n); setTimeout(() => setShake(null), 400);

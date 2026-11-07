@@ -1,5 +1,5 @@
 {
-  "_ghi_chu": "Bé dọn phòng: kéo đồ vào đúng chỗ. bins = các chỗ cất đồ (say = câu đọc sau tên món đồ, vd. 'Quả bóng cất vào hộp đồ chơi'); items: bin là khóa trong bins. tiers: bins = chỗ cất dùng trong màn, items = số món đồ.",
+  "_ghi_chu": "Bé dọn phòng: kéo đồ vào đúng chỗ. bins = các chỗ cất đồ (đặt đúng chỉ kêu 'ting', không đọc); done = chữ hiện khi dọn xong; items: bin là khóa trong bins. tiers: bins = chỗ cất dùng trong màn, items = số món đồ.",
   "done": "Phòng sạch tinh tươm rồi!",
   "tiers": [
     { "from": 1, "bins": ["toy", "clothes"], "items": 4, "allow": 1 },
@@ -9,10 +9,10 @@
     { "from": 16, "bins": ["toy", "clothes", "book", "trash"], "items": 11, "allow": 3 }
   ],
   "bins": {
-    "toy": { "name": "Hộp đồ chơi", "icon": "🧸", "say": "cất vào hộp đồ chơi", "color": "#FFE8C7" },
-    "clothes": { "name": "Tủ quần áo", "icon": "👕", "say": "cất vào tủ quần áo", "color": "#E2F4FF" },
-    "book": { "name": "Kệ sách", "icon": "📚", "say": "xếp lên kệ sách", "color": "#E8F7E4" },
-    "trash": { "name": "Thùng rác", "icon": "🗑️", "say": "bỏ vào thùng rác", "color": "#EEE9F5" }
+    "toy": { "name": "Hộp đồ chơi", "icon": "🧸", "color": "#FFE8C7" },
+    "clothes": { "name": "Tủ quần áo", "icon": "👕", "color": "#E2F4FF" },
+    "book": { "name": "Kệ sách", "icon": "📚", "color": "#E8F7E4" },
+    "trash": { "name": "Thùng rác", "icon": "🗑️", "color": "#EEE9F5" }
   },
   "items": [
     { "e": "🚗", "n": "Ô tô đồ chơi", "bin": "toy" },
