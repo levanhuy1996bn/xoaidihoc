@@ -16,22 +16,22 @@ import { playWin } from "./sounds";
  */
 const DONE_DELAY = 2000;
 
+// Màn đang chơi KHÔNG nằm trên đường dẫn: tải lại trang thì về bản đồ màn, bé tự chọn lại màn.
 export default function LevelGame({ id, makeLevel, Board, speak, onStars, intro, doneDelay = DONE_DELAY }) {
   const [progress, setProgress] = useState(() => getProgress(id));
-  const [view, setView] = useState("map");
-  const [level, setLevel] = useState(1);
+  const [level, setLevel] = useState(null); // null = đang ở bản đồ màn
   const [attempt, setAttempt] = useState(0);
-  const [result, setResult] = useState(null);
+  const [result, setResult] = useState(null); // { level, stars, gained, milestone, shown }
   const cleared = clearedCount(progress);
-  const cfg = useMemo(() => makeLevel(level, makeRng(`${id}:${level}`)), [id, level, makeLevel]);
+  const cfg = useMemo(() => (level ? makeLevel(level, makeRng(`${id}:${level}`)) : null), [id, level, makeLevel]);
   const timer = useRef(null);
   useEffect(() => () => clearTimeout(timer.current), []);
-  function show(v) { clearTimeout(timer.current); setView(v); }
 
   function start(n) {
-    setLevel(n); setAttempt((a) => a + 1); setResult(null); show("play");
+    clearTimeout(timer.current); setResult(null); setAttempt((a) => a + 1); setLevel(n);
     window.scrollTo(0, 0);
   }
+  function toMap() { clearTimeout(timer.current); setResult(null); setLevel(null); window.scrollTo(0, 0); }
 
   function finish(mistakes) {
     const allow = cfg.allow ?? 2;
@@ -42,25 +42,25 @@ export default function LevelGame({ id, makeLevel, Board, speak, onStars, intro,
     setProgress(getProgress(id));
     if (gained) onStars(gained);
     const milestone = level % 10 === 0;
-    setResult({ stars, gained, milestone });
+    setResult({ level, stars, gained, milestone, shown: false });
     // Đã lưu xong; thoát ra lúc này cũng không mất. Chờ một chút rồi mới hiện màn hình sao.
     timer.current = setTimeout(() => {
-      setView("done");
+      setResult((r) => r && { ...r, shown: true });
       speak(fill(messages.levelDone, { level, stars }) + (milestone ? ". " + fill(messages.milestone, { level }) : ""));
     }, doneDelay);
   }
 
-  if (view === "play") {
+  if (level && !(result?.shown && result.level === level)) {
     return <section className="game-panel">
       <div className="level-bar">
-        <button className="chip" onClick={() => show("map")}>☰ Các màn</button>
+        <button className="chip" onClick={toMap}>☰ Các màn</button>
         <b>Màn {level}</b>
       </div>
-      <Board key={attempt} cfg={cfg} level={level} speak={speak} onFinish={finish} />
+      <Board key={`${level}-${attempt}`} cfg={cfg} level={level} speak={speak} onFinish={finish} />
     </section>;
   }
 
-  if (view === "done" && result) {
+  if (level && result) {
     return <section className="game-panel level-done">
       <div className="section-kicker">MÀN {level}</div>
       <div className="big-stars">
@@ -73,7 +73,7 @@ export default function LevelGame({ id, makeLevel, Board, speak, onStars, intro,
       <button className="primary-button" onClick={() => start(level + 1)}>Màn tiếp theo <span>→</span></button>
       <div className="chip-row">
         <button className="chip" onClick={() => start(level)}>↺ Chơi lại</button>
-        <button className="chip" onClick={() => show("map")}>☰ Các màn</button>
+        <button className="chip" onClick={toMap}>☰ Các màn</button>
       </div>
     </section>;
   }

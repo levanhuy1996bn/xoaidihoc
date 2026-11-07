@@ -1,6 +1,6 @@
 {
-  "_ghi_chu": "Trang chủ và danh sách màn. id phải khớp với danh sách trong App.jsx. group: learn, think, life, play, memory. Trong title dùng \\n để xuống dòng. dailySubtitle: {done}/{total} = số nhiệm vụ Xoài phiêu lưu đã xong hôm nay.",
-  "home": { "greeting": "XIN CHÀO BÉ YÊU 👋", "title": "Hôm nay mình\nhọc gì nhỉ?", "subtitle": "Chơi vui, học giỏi mỗi ngày!", "art": "🥭", "dailyIcon": "🐱", "dailyTitle": "Xoài phiêu lưu 🗺️", "dailySubtitle": "Nhiệm vụ hôm nay: {done}/{total} · chạm để xem", "noteTitle": "Dành cho bé 3–5 tuổi", "noteText": "Nội dung đơn giản, hình ảnh vui nhộn và thao tác dễ dàng." },
+  "_ghi_chu": "Trang chủ và danh sách màn. id phải khớp với danh sách trong App.jsx. group: learn, think, life, play, memory. Trong title dùng \\n để xuống dòng. Đường dẫn trò chơi: /tro-choi/<id> (màn đang chơi không lưu trên đường dẫn). footer = dòng chữ cuối trang. dailySubtitle: {done}/{total} = số nhiệm vụ Xoài phiêu lưu đã xong hôm nay.",
+  "home": { "greeting": "XIN CHÀO BÉ YÊU 👋", "title": "Hôm nay mình\nhọc gì nhỉ?", "subtitle": "Chơi vui, học giỏi mỗi ngày!", "art": "🥭", "dailyIcon": "🗺️", "dailyTitle": "Xoài phiêu lưu", "dailySubtitle": "Nhiệm vụ hôm nay: {done}/{total} · chạm để xem", "noteTitle": "Dành cho bé 3–5 tuổi", "noteText": "Nội dung đơn giản, hình ảnh vui nhộn và thao tác dễ dàng.", "footer": "Made with 💛 by Xoài Family & Dưa Góp Family" },
   "sections": [
     { "group": "learn", "title": "Góc học tập của bé", "subtitle": "Học bằng hình ảnh và âm thanh", "icon": "📚" },
     { "group": "think", "title": "Thử thách tư duy", "subtitle": "Quan sát, so sánh và suy luận", "icon": "🧠" },
@@ -22,6 +22,8 @@
     { "id": "pattern", "group": "think", "emoji": "🔁", "title": "Tìm quy luật", "subtitle": "Hình nào tiếp theo?", "color": "#E5F8E9" },
     { "id": "jigsaw", "group": "think", "emoji": "🧩", "title": "Ghép hình bí ẩn", "subtitle": "Ghép mảnh, đoán hình", "color": "#FFE8EF" },
     { "id": "missing", "group": "think", "emoji": "🚂", "title": "Điền số còn thiếu", "subtitle": "Kéo số vào chỗ trống", "color": "#E2F4FF" },
+    { "id": "math", "group": "think", "emoji": "➕", "title": "Cộng trừ vui", "subtitle": "Cộng trừ trong phạm vi 10", "color": "#FFF4D6" },
+    { "id": "compare", "group": "think", "emoji": "⚖️", "title": "Bên nào nhiều hơn?", "subtitle": "So sánh hai nhóm con vật", "color": "#E8F7E4" },
     { "id": "routine", "group": "life", "emoji": "🪥", "title": "Việc nhỏ mỗi ngày", "subtitle": "Đánh răng, rửa tay đúng thứ tự", "color": "#E2F4FF" },
     { "id": "market", "group": "life", "emoji": "🛒", "title": "Siêu thị tí hon", "subtitle": "Mua đúng đồ trong danh sách", "color": "#FFF3D6" },
     { "id": "room", "group": "life", "emoji": "🧸", "title": "Bé dọn phòng", "subtitle": "Cất đồ vào đúng chỗ", "color": "#E8F7E4" },

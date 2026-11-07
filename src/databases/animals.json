@@ -1,7 +1,7 @@
 {
   "_ghi_chu": "Thế giới động vật. habitat và food là khóa trong habitats/foods. sound = tiếng kêu (null nếu không có).",
   "animals": [
-    { "name": "Con mèo", "emoji": "🐱", "sound": "meo meo", "habitat": "home", "food": "fish" },
+    { "name": "Con mèo", "emoji": "😸", "sound": "meo meo", "habitat": "home", "food": "fish" },
     { "name": "Con chó", "emoji": "🐶", "sound": "gâu gâu", "habitat": "home", "food": "bone" },
     { "name": "Con gà trống", "emoji": "🐓", "sound": "ò ó o", "habitat": "farm", "food": "rice" },
     { "name": "Con vịt", "emoji": "🦆", "sound": "cạp cạp", "habitat": "farm", "food": "shrimp" },

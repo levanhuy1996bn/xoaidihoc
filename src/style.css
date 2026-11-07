@@ -425,3 +425,31 @@ footer{text-align:center;font-size:10px;color:#b6adba;padding:15px}.back-button{
 .daily-row.adv-entry:active{transform:scale(.98)}
 .daily-row.adv-entry .daily-icon{animation:bob 1.7s ease-in-out infinite alternate}
 @media(max-width:370px){.adv-tabs button small{font-size:10px}.adv-hero h1{font-size:21px}.adv-hero-pet{width:80px;height:80px}.adv-hero-pet span{font-size:44px}.adv-island{width:86%}}
+
+/* ===== Cộng trừ vui ===== */
+.math-eq{display:inline-flex;align-items:center;gap:8px;font-size:30px;font-weight:900;color:#5c4a3a;letter-spacing:1px}
+.math-eq .pat-q{width:44px;height:44px;font-size:26px}
+.math-pic{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;width:100%;background:#fff7e8;border-radius:20px;padding:12px 8px}
+.math-group{display:flex;flex-wrap:wrap;justify-content:center;gap:2px;max-width:200px;background:#fff;border-radius:16px;padding:8px}
+.math-obj{position:relative;font-size:34px;line-height:1.1}
+.math-obj i{font-style:normal}
+.math-obj.gone i{opacity:.35;filter:grayscale(.6)}
+.math-obj.gone::after{content:"✕";position:absolute;inset:0;display:grid;place-items:center;color:#f05d5d;font-size:32px;font-weight:900}
+.math-sign{font-size:34px;font-weight:900;color:#e99b42}
+
+/* ===== Bên nào nhiều hơn? ===== */
+.cmp-sides{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 8px}
+.cmp-side{position:relative;border:4px solid #fff;border-radius:22px;height:200px;padding:8px 4px;overflow:hidden;box-shadow:0 4px 14px #6550801a;transition:transform .12s;display:flex;align-items:center;justify-content:center}
+.cmp-side:active{transform:scale(.97)}
+.cmp-side.side-0{background:linear-gradient(180deg,#e7f6ff 0 22%,#d8f0c8 22%)}
+.cmp-side.side-1{background:linear-gradient(180deg,#fff3dc 0 22%,#f6ecc0 22%)}
+.cmp-side.correct{border-color:#6cc58a;animation:pop .35s}
+.cmp-side.wrong{opacity:.45;animation:shake .35s}
+.cmp-neat{display:flex;flex-wrap:wrap;justify-content:center;align-content:center;gap:2px 4px;line-height:1.1}
+.cmp-spot{position:absolute;transform:translate(-50%,-50%);line-height:1}
+.cmp-count{position:absolute;bottom:6px;left:50%;transform:translateX(-50%);background:#6cc58a;color:#fff;font-weight:900;font-size:20px;min-width:38px;height:38px;border-radius:19px;display:grid;place-items:center;box-shadow:0 3px 0 #4fa56c;z-index:2;animation:pop .35s}
+.cmp-equal{display:block;margin:2px auto 0;border:3px solid transparent;background:#f6f1fd;color:#6f55b8;border-radius:20px;padding:12px 26px;font-size:18px;font-weight:900}
+.cmp-equal.correct{border-color:#6cc58a;background:#eafaef;color:#3f8a57;animation:pop .35s}
+.cmp-equal.wrong{opacity:.45;animation:shake .35s}
+@media(max-width:370px){.cmp-side{height:180px}.math-obj{font-size:28px}.math-eq{font-size:26px}}
+

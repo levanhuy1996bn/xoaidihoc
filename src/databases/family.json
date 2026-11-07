@@ -1,8 +1,14 @@
 {
-  "_ghi_chu": "Lớp học gia đình. id = tên file ảnh trong src/assets/family (vd. sau → sau.jpg). focus = điểm giữa khuôn mặt trong ảnh (ngang dọc, %), zoom = phóng to để mặt rõ hơn. Thứ tự members = chỗ ngồi mặc định (2 người một bàn). Thêm ảnh mới xong thì chạy python3 scripts/shrink-images.py để thu nhỏ (xem README).",
+  "_ghi_chu": "Lớp học gia đình. id = tên file ảnh trong src/assets/family (vd. sau → sau.jpg). focus = điểm giữa khuôn mặt trong ảnh (ngang dọc, %), zoom = phóng to để mặt rõ hơn. Thứ tự members = chỗ ngồi mặc định (2 người một bàn). screens = các màn trong lớp; slug = đường dẫn (vd. /lop/diem-danh). Thêm ảnh mới xong thì chạy python3 scripts/shrink-images.py để thu nhỏ (xem README).",
   "className": "Dưa Góp",
   "bell": "Reng reng! Vào học thôi cả nhà ơi!",
   "answerSeconds": 10,
+  "screens": {
+    "attendance": { "slug": "diem-danh", "icon": "📋", "title": "Điểm danh" },
+    "wheel": { "slug": "vong-quay", "icon": "🎡", "title": "Kiểm tra miệng" },
+    "who": { "slug": "ai-day", "icon": "👀", "title": "Ai đây?" },
+    "ranking": { "slug": "bang-vang", "icon": "🏆", "title": "Bảng vàng" }
+  },
   "members": [
     { "id": "sau", "name": "Ông Sáu", "color": "#dbe9ff" },
     { "id": "huong", "name": "Bà Hường", "color": "#ffe9c7", "focus": "48% 25%", "zoom": 1.6 },

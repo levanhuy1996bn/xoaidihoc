@@ -30,7 +30,9 @@ Website học tập tương tác cho bé 3–5 tuổi, làm bằng React + Vite.
 | 👤 Tìm bóng | Kéo con vật vào đúng cái bóng | 2 → 5 bạn, khác loài → cùng loài (toàn chim, toàn côn trùng…) |
 | 🔁 Tìm quy luật | Hình nào tiếp theo / còn thiếu? | AB → AAB, ABC → ABCD, thiếu ở cuối → thiếu ở giữa |
 | 🧩 Ghép hình bí ẩn | Ghép mảnh để đoán hình | 2 → 4 → 6 → 9 mảnh |
-| 🚂 Điền số còn thiếu | Kéo thẻ số vào ô trống của dãy số liên tiếp (đoàn tàu, con sâu, bậc thang, dãy nhà) | 1–5 có chấm gợi ý → 1–10 không bắt đầu từ 1 → 1–20; 1 → 3 ô trống, thêm thẻ thừa |
+| 🚂 Điền số còn thiếu | Kéo thẻ số vào ô trống của dãy số liên tiếp (đoàn tàu, con sâu, bậc thang, dãy nhà), luôn có thẻ thừa để chọn | 1–5 có chấm gợi ý → thiếu 2 ô → dãy tới 9 số thiếu 2–3 ô → 1–20 |
+| ➕ Cộng trừ vui | Phép cộng, trừ trong phạm vi 10, có hình để đếm (cộng = gộp 2 nhóm, trừ = gạch bớt) và câu chuyện ngắn ("Có 5 con chim, 2 con bay đi…") | Cộng ≤ 5 → thêm trừ → ≤ 10 → chỉ có số → tìm số còn thiếu (2 + ? = 5) |
+| ⚖️ Bên nào nhiều hơn? | Hai bãi cỏ có con vật, chọn bên nhiều hơn / ít hơn; làm xong hiện số con mỗi bên | Chênh nhiều, cùng con vật → hỏi cả ít hơn → khác con vật, xếp lộn xộn → bên ít vẽ to hơn, có "Bằng nhau" |
 | 🪥 Việc nhỏ mỗi ngày | Xếp các bước đúng thứ tự: đánh răng, rửa tay, đi ngủ… | 3 → 4 → 5 bước |
 | 🛒 Siêu thị tí hon | Mua đúng đồ và đủ số lượng trong danh sách | Nhiều món hơn, số lượng 1–3, thêm món dễ nhầm |
 | 🧸 Bé dọn phòng | Kéo đồ vào hộp đồ chơi, tủ quần áo, kệ sách, thùng rác | 2 → 4 chỗ cất, 4 → 11 món |
@@ -118,10 +120,13 @@ be-vui-hoc-react-vite/
 │   │   ├── Alphabet.jsx  Numbers.jsx  Colors.jsx  Shapes.jsx
 │   │   ├── AnimalWorld.jsx  FruitsVeggies.jsx  Body.jsx  Weather.jsx
 │   │   ├── OddOneOut.jsx  ShadowMatch.jsx  Patterns.jsx  Jigsaw.jsx  MissingNumbers.jsx
+│   │   ├── AddSubtract.jsx  CompareSides.jsx
 │   │   ├── DailyRoutine.jsx  Supermarket.jsx  CleanRoom.jsx  Traffic.jsx
 │   │   ├── AnimalCounting.jsx  DragNumbers.jsx
 │   │   └── Gallery.jsx
 │   ├── App.jsx               # Trang chủ, nối id màn với component, giọng đọc, số sao
+│   ├── router.js             # Router nhỏ dùng History API (đường dẫn, nút Back)
+│   ├── routes.js             # Danh sách đường dẫn, danh sách trò có màn (LEVEL_GAMES)
 │   ├── utils.js              # Hàm ngẫu nhiên (có seed theo số màn), tạo đáp án
 │   ├── main.jsx
 │   └── style.css
@@ -261,7 +266,7 @@ Mọi nội dung nằm trong thư mục **`src/databases/`**, mỗi màn một f
 | `produce.json` | Rau củ, trái cây |
 | `body.json` | Bộ phận cơ thể, câu hỏi "Mình dùng gì để…?" |
 | `weather.json` | Thời tiết, các mùa, thiên nhiên, đồ cần mang |
-| `odd-one-out.json`, `shadows.json`, `patterns.json`, `jigsaw.json`, `missing-numbers.json` | Các trò Thử thách tư duy |
+| `odd-one-out.json`, `shadows.json`, `patterns.json`, `jigsaw.json`, `missing-numbers.json`, `math.json`, `compare.json` | Các trò Thử thách tư duy |
 | `routines.json`, `supermarket.json`, `clean-room.json`, `traffic.json` | Các trò Cuộc sống quanh bé |
 | `animal-counting.json`, `drag-numbers.json`, `race.json` | Đếm con vật, Kéo thả số, Đua vui |
 
@@ -360,6 +365,25 @@ Các trò **Thử thách tư duy** và **Cuộc sống quanh bé** chơi theo m�
 - **Màn vô tận:** không cần tạo sẵn từng màn. `makeLevel` sinh màn từ số màn và bảng `tiers` trong JSON. Mỗi số màn dùng một hạt giống ngẫu nhiên cố định, nên "màn 7" lần nào chơi cũng giống nhau.
 - **Tăng độ khó** bằng số lượng hình, mức độ giống nhau và số bước, không bằng cách bấm giờ (phù hợp bé 3–5 tuổi).
 
+### Đường dẫn
+
+Mỗi màn hình có đường dẫn riêng, nên tải lại trang vẫn ở đúng chỗ, nút Back của điện thoại lùi về màn trước, và gửi được link thẳng tới một trò:
+
+| Đường dẫn | Màn hình |
+|---|---|
+| `/` | Trang chủ |
+| `/tro-choi/<id>` | Một trò (id trong `games.json`), vd. `/tro-choi/odd` |
+| `/lop`, `/lop/diem-danh`, `/lop/vong-quay`, `/lop/ai-day`, `/lop/bang-vang` | Lớp Dưa Góp (slug trong `family.json` → `screens`) |
+| `/phieu-luu`, `/phieu-luu/nhiem-vu`, `/phieu-luu/thu-cung`, `/phieu-luu/cua-hang`, `/phieu-luu/huy-hieu` | Xoài phiêu lưu (slug trong `adventure.json` → `tabs`) |
+| `/thanh-tich` | Thành tích |
+
+- **Nút "Quay lại"** trong trò đưa về nơi đã mở trò (trang chủ hoặc Xoài phiêu lưu), kể cả khi đang chơi giữa màn; nút "☰ Các màn" về bản đồ màn. Mở link / vừa tải lại thì "Quay lại" về trang chủ.
+- **Màn đang chơi không lưu trên đường dẫn:** tải lại khi đang chơi trò có màn thì về bản đồ màn, bé tự chọn lại màn (sao đã lưu không mất).
+- **Mở link / tải lại thẳng vào trò** thì vào chơi luôn, nhưng câu hỏi đầu chưa được đọc (trình duyệt chỉ cho đọc to sau khi người dùng chạm vào trang). Chạm vào bất kỳ đâu là câu hỏi được đọc; chạm thẳng vào đáp án thì đọc lời khen / "thử lại" như bình thường.
+- Link sai (trò không có, đường dẫn lạ…) tự chuyển về trang chủ.
+- Đổi tab nhỏ (tab trong Xoài phiêu lưu, tab Xoài Vui Học / Lớp) không tạo thêm bước Back.
+- Trên iPhone, vuốt từ mép trái để lùi khi đang kéo thả gần mép có thể lùi nhầm một màn (mở bằng biểu tượng trên màn hình chính thì không bị).
+
 ---
 
 ## 11. Dữ liệu và tiến độ
@@ -383,7 +407,7 @@ Các trò **Thử thách tư duy** và **Cuộc sống quanh bé** chơi theo m�
 | Máy đọc sai một từ | Do giọng đọc của thiết bị; đổi cách viết câu trong `src/databases/*.json` hoặc thay bằng file âm thanh thu sẵn |
 | Build lỗi sau khi sửa JSON | Kiểm tra dấu phẩy, dấu nháy kép (xem mục 9) |
 | Vercel build lỗi `Could not resolve "./games/..."` | Tên file sai chữ hoa/thường. macOS không phân biệt nhưng Vercel (Linux) có, ví dụ `body.jsx` ≠ `Body.jsx` |
-| Tải lại trang bị 404 | Kiểm tra `vercel.json` có trong repo |
+| Tải lại trang bị 404 | Kiểm tra `vercel.json` có trong repo. Deploy chỗ khác (Netlify, GitHub Pages…) cũng phải cấu hình cho mọi đường dẫn trả về `index.html` |
 | Push bị từ chối (`publickey`) | Xem mục 6 |
 
 ---

@@ -1,9 +1,9 @@
 {
-  "_ghi_chu": "Xoài phiêu lưu. Đảo mở theo tổng số sao (need). games = id trò trong games.json hiện trên đảo. Nhiệm vụ làm mới mỗi ngày; metric: correct (câu đúng), stars (sao nhận được), levels (màn đã vượt), care (lần chăm thú cưng). Huy hiệu tính trên tổng: correct, stars, levels, islands, pets, petLevel, streak. Trong texts, {tên} được thay bằng giá trị; câu đọc to dùng 'con' thay cho 'bé'.",
+  "_ghi_chu": "Xoài phiêu lưu. Đảo mở theo tổng số sao (need). games = id trò trong games.json hiện trên đảo. Nhiệm vụ làm mới mỗi ngày; metric: correct (câu đúng), stars (sao nhận được), levels (màn đã vượt), care (lần chăm thú cưng). Huy hiệu tính trên tổng: correct, stars, levels, islands, pets, petLevel, streak. tabs: slug = đường dẫn (vd. /phieu-luu/nhiem-vu). Trong texts, {tên} được thay bằng giá trị; câu đọc to dùng 'con' thay cho 'bé'.",
   "islands": [
     { "id": "beginner", "name": "Đảo Khởi Đầu", "emoji": "🏝️", "description": "Nơi bắt đầu hành trình", "need": 0, "color": "#ddf5e7", "games": ["alphabet", "numbers", "colors", "shapes"] },
     { "id": "forest", "name": "Rừng Tri Thức", "emoji": "🌳", "description": "Gặp các con vật, rau củ và thời tiết", "need": 15, "color": "#e8f3d9", "games": ["zoo", "produce", "body", "weather"] },
-    { "id": "ocean", "name": "Đại Dương Kỳ Bí", "emoji": "🐬", "description": "Những câu đố cần suy nghĩ", "need": 40, "color": "#ddf0ff", "games": ["odd", "shadow", "pattern", "jigsaw", "missing"] },
+    { "id": "ocean", "name": "Đại Dương Kỳ Bí", "emoji": "🐬", "description": "Những câu đố cần suy nghĩ", "need": 40, "color": "#ddf0ff", "games": ["odd", "shadow", "pattern", "jigsaw", "missing", "math", "compare"] },
     { "id": "castle", "name": "Lâu Đài Ánh Sao", "emoji": "🏰", "description": "Tập làm việc nhỏ mỗi ngày", "need": 80, "color": "#f2e4ff", "games": ["routine", "market", "room", "traffic"] },
     { "id": "space", "name": "Vũ Trụ Xoài", "emoji": "🚀", "description": "Đếm, đua và xem ảnh kỷ niệm", "need": 150, "color": "#e6e3ff", "games": ["animals", "drag", "race", "gallery"] }
   ],
@@ -14,7 +14,7 @@
     { "id": "care", "emoji": "💗", "title": "Chăm thú cưng", "text": "Cho thú cưng ăn hoặc chơi", "metric": "care", "target": 1, "reward": 5 }
   ],
   "pets": [
-    { "id": "cat", "name": "Mèo Miu", "emoji": "🐱", "price": 0, "rarity": "Bạn đầu tiên" },
+    { "id": "cat", "name": "Mèo Miu", "emoji": "😸", "price": 0, "rarity": "Bạn đầu tiên" },
     { "id": "dog", "name": "Cún Bông", "emoji": "🐶", "price": 30, "rarity": "Thường" },
     { "id": "rabbit", "name": "Thỏ Trắng", "emoji": "🐰", "price": 50, "rarity": "Hiếm" },
     { "id": "panda", "name": "Gấu Trúc", "emoji": "🐼", "price": 100, "rarity": "Siêu hiếm" },
@@ -38,11 +38,11 @@
     { "id": "streak", "emoji": "🔥", "title": "Ngày nào cũng học", "text": "Học 5 ngày liền", "metric": "streak", "target": 5 }
   ],
   "tabs": [
-    { "id": "map", "emoji": "🗺️", "label": "Đảo" },
-    { "id": "missions", "emoji": "🎯", "label": "Nhiệm vụ" },
-    { "id": "pet", "emoji": "🐾", "label": "Thú cưng" },
-    { "id": "shop", "emoji": "🛍️", "label": "Cửa hàng" },
-    { "id": "badges", "emoji": "🏆", "label": "Huy hiệu" }
+    { "id": "map", "slug": "", "emoji": "🗺️", "label": "Đảo" },
+    { "id": "missions", "slug": "nhiem-vu", "emoji": "🎯", "label": "Nhiệm vụ" },
+    { "id": "pet", "slug": "thu-cung", "emoji": "🐾", "label": "Thú cưng" },
+    { "id": "shop", "slug": "cua-hang", "emoji": "🛍️", "label": "Cửa hàng" },
+    { "id": "badges", "slug": "huy-hieu", "emoji": "🏆", "label": "Huy hiệu" }
   ],
   "texts": {
     "kicker": "🥭 XOÀI PHIÊU LƯU",

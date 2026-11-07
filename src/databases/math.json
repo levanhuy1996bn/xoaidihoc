@@ -1,0 +1,32 @@
+{
+  "_ghi_chu": "Cộng trừ vui (trong phạm vi 10). Mỗi màn có questionsPerLevel câu. tiers: từ màn 'from' trở đi dùng cấu hình đó. ops = phép tính dùng (add cộng, sub trừ); max = kết quả / số lớn nhất; pictures = hiện hình để đếm; missing = có dạng tìm số còn thiếu (2 + ? = 5); options = số đáp án. objects: n = tên kèm loại từ, c = loại từ, away = việc làm cho bớt đi (phép trừ). Câu đọc: {a} {b} thay bằng số.",
+  "questionsPerLevel": 4,
+  "tiers": [
+    { "from": 1, "ops": ["add"], "max": 5, "pictures": true, "missing": false, "options": 3, "allow": 1 },
+    { "from": 4, "ops": ["add", "sub"], "max": 5, "pictures": true, "missing": false, "options": 3, "allow": 1 },
+    { "from": 7, "ops": ["add", "sub"], "max": 10, "pictures": true, "missing": false, "options": 3, "allow": 1 },
+    { "from": 11, "ops": ["add", "sub"], "max": 10, "pictures": false, "missing": false, "options": 4, "allow": 2 },
+    { "from": 16, "ops": ["add", "sub"], "max": 10, "pictures": false, "missing": true, "options": 4, "allow": 2 }
+  ],
+  "objects": [
+    { "e": "🍎", "n": "quả táo", "c": "quả", "away": "con ăn mất" },
+    { "e": "🐥", "n": "bạn gà con", "c": "bạn", "away": "chạy đi chơi" },
+    { "e": "🎈", "n": "quả bóng bay", "c": "quả", "away": "bay mất" },
+    { "e": "🐟", "n": "con cá", "c": "con", "away": "bơi đi" },
+    { "e": "🍬", "n": "cái kẹo", "c": "cái", "away": "con ăn mất" },
+    { "e": "🐦", "n": "con chim", "c": "con", "away": "bay đi" },
+    { "e": "🌸", "n": "bông hoa", "c": "bông", "away": "con hái tặng mẹ" },
+    { "e": "🚗", "n": "chiếc ô tô", "c": "chiếc", "away": "chạy đi" },
+    { "e": "🐸", "n": "con ếch", "c": "con", "away": "nhảy xuống ao" },
+    { "e": "🍓", "n": "quả dâu", "c": "quả", "away": "con ăn mất" }
+  ],
+  "say": {
+    "add": "Có {a} {n}, thêm {b} {c} nữa. Có tất cả mấy {c}?",
+    "sub": "Có {a} {n}, {b} {c} {away}. Còn lại mấy {c}?",
+    "addNumber": "{a} cộng {b} bằng mấy?",
+    "subNumber": "{a} trừ {b} bằng mấy?",
+    "addMissing": "{a} cộng mấy bằng {sum}?",
+    "subMissing": "{a} trừ mấy bằng {rest}?",
+    "praise": "Đúng rồi! {text}"
+  }
+}

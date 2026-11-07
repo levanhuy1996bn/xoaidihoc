@@ -12,8 +12,8 @@ const findPet = (id) => data.pets.find((p) => p.id === id) || data.pets[0];
  * nuôi thú cưng, cửa hàng và huy hiệu. Mọi chữ và con số nằm trong databases/adventure.json.
  * Chạm vào bất cứ thứ gì cũng được đọc to, để bé chưa biết chữ vẫn chơi được.
  */
-export default function Adventure({ stars, completed, speak, games, onPlay }) {
-  const [tab, setTab] = useState("map");
+// tab lấy từ đường dẫn (/phieu-luu, /phieu-luu/nhiem-vu…); onTab(id) để đổi tab
+export default function Adventure({ stars, completed, speak, games, onPlay, tab = "map", onTab }) {
   const [save, setSaveState] = useState(loadSave);
   const [today, setToday] = useState(getToday);
   const [toast, setToast] = useState("");
@@ -47,7 +47,7 @@ export default function Adventure({ stars, completed, speak, games, onPlay }) {
     } else speak(T.welcome);
   }, []);
 
-  function changeTab(t) { setTab(t.id); speak(t.label); window.scrollTo(0, 0); }
+  function changeTab(t) { onTab(t.id); speak(t.label); window.scrollTo(0, 0); }
 
   // ---- Đảo
   function tapIsland(island) {
