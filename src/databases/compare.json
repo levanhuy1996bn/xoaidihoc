@@ -1,0 +1,36 @@
+{
+  "_ghi_chu": "Bên nào nhiều hơn? Hai bãi cỏ có các con vật, bé chọn bên nhiều hơn / ít hơn (hoặc bằng nhau). tiers: min/max = số con mỗi bên; gap = hai bên chênh nhau ít nhất bao nhiêu; ask = các kiểu hỏi (more nhiều hơn, less ít hơn); mixed = hai bên là hai con vật khác nhau; scatter = xếp lộn xộn (khó đếm hơn); bigFew = bên ít hơn vẽ to hơn để bé không nhìn kích thước mà đoán; equal = có thể hai bên bằng nhau (có nút Bằng nhau).",
+  "questionsPerLevel": 4,
+  "tiers": [
+    { "from": 1, "min": 1, "max": 5, "gap": 2, "ask": ["more"], "mixed": false, "scatter": false, "bigFew": false, "equal": false, "allow": 1 },
+    { "from": 4, "min": 1, "max": 6, "gap": 1, "ask": ["more", "less"], "mixed": false, "scatter": false, "bigFew": false, "equal": false, "allow": 1 },
+    { "from": 7, "min": 2, "max": 7, "gap": 1, "ask": ["more", "less"], "mixed": true, "scatter": true, "bigFew": false, "equal": false, "allow": 1 },
+    { "from": 11, "min": 2, "max": 8, "gap": 1, "ask": ["more", "less"], "mixed": true, "scatter": true, "bigFew": true, "equal": true, "allow": 2 },
+    { "from": 16, "min": 3, "max": 10, "gap": 1, "ask": ["more", "less"], "mixed": true, "scatter": true, "bigFew": true, "equal": true, "allow": 2 }
+  ],
+  "animals": [
+    { "e": "🐱", "n": "con mèo" },
+    { "e": "🐶", "n": "con chó" },
+    { "e": "🐰", "n": "con thỏ" },
+    { "e": "🐥", "n": "bạn gà con" },
+    { "e": "🐸", "n": "con ếch" },
+    { "e": "🐷", "n": "con lợn" },
+    { "e": "🐮", "n": "con bò" },
+    { "e": "🐑", "n": "con cừu" },
+    { "e": "🦆", "n": "con vịt" },
+    { "e": "🐼", "n": "con gấu trúc" },
+    { "e": "🐵", "n": "con khỉ" },
+    { "e": "🐞", "n": "con bọ rùa" }
+  ],
+  "say": {
+    "more": "Bên nào có nhiều con vật hơn?",
+    "less": "Bên nào có ít con vật hơn?",
+    "moreEqual": "Bên nào có nhiều con vật hơn? Nếu hai bên bằng nhau thì chọn bằng nhau nhé",
+    "lessEqual": "Bên nào có ít con vật hơn? Nếu hai bên bằng nhau thì chọn bằng nhau nhé",
+    "prompt": { "more": "Bên nào nhiều hơn?", "less": "Bên nào ít hơn?" },
+    "equalLabel": "Bằng nhau",
+    "praise": "Đúng rồi! {a} {an} {word} {b} {bn}",
+    "words": { "more": "nhiều hơn", "less": "ít hơn" },
+    "praiseEqual": "Đúng rồi! Hai bên đều có {a} con"
+  }
+}

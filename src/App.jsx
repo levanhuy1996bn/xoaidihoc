@@ -20,6 +20,8 @@ import ShadowMatch from "./games/ShadowMatch";
 import Patterns from "./games/Patterns";
 import Jigsaw from "./games/Jigsaw";
 import MissingNumbers from "./games/MissingNumbers";
+import AddSubtract from "./games/AddSubtract";
+import CompareSides from "./games/CompareSides";
 import DailyRoutine from "./games/DailyRoutine";
 import Supermarket from "./games/Supermarket";
 import CleanRoom from "./games/CleanRoom";
@@ -37,11 +39,11 @@ import adventure from "./databases/adventure.json";
 const COMPONENTS = {
   alphabet: Alphabet, numbers: Numbers, colors: Colors, shapes: Shapes, zoo: AnimalWorld,
   produce: FruitsVeggies, body: Body, weather: Weather,
-  odd: OddOneOut, shadow: ShadowMatch, pattern: Patterns, jigsaw: Jigsaw, missing: MissingNumbers,
+  odd: OddOneOut, shadow: ShadowMatch, pattern: Patterns, jigsaw: Jigsaw, missing: MissingNumbers, math: AddSubtract, compare: CompareSides,
   routine: DailyRoutine, market: Supermarket, room: CleanRoom, traffic: Traffic,
   animals: AnimalCounting, drag: DragNumbers, race: Race, gallery: Gallery,
 };
-const LEVEL_GAMES = ["odd", "shadow", "pattern", "jigsaw", "missing", "routine", "market", "room", "traffic"];
+const LEVEL_GAMES = ["odd", "shadow", "pattern", "jigsaw", "missing", "math", "compare", "routine", "market", "room", "traffic"];
 const games = gameList.filter((g) => COMPONENTS[g.id]).map((g) => ({ ...g, Component: COMPONENTS[g.id] }));
 
 function readNumber(key) {

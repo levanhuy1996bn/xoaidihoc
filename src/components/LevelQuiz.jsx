@@ -3,7 +3,8 @@ import { PRAISE, TRY_AGAIN } from "./ChoiceQuiz";
 
 /**
  * Một màn gồm nhiều câu hỏi chọn đáp án. Đếm số lần sai; trả lời đúng câu cuối là gọi onFinish(soLanSai) ngay.
- * Mỗi câu: { prompt, say, visual?, options: [{ id, content, label }], answer, praise?, columns? }
+ * Mỗi câu: { prompt, say, visual?, options: [{ id, content, label }], answer, praise?, columns?, render? }
+ * - render({ choose, done, wrong, answer }): tự vẽ phần chọn đáp án thay cho lưới nút
  */
 export default function LevelQuiz({ questions, speak, onFinish }) {
   const [index, setIndex] = useState(0);
@@ -41,12 +42,13 @@ export default function LevelQuiz({ questions, speak, onFinish }) {
       <button className="replay-button" onClick={() => speak(q.say)} aria-label="Nghe lại câu hỏi">🔊</button>
     </div>
     {q.visual && <div className="quiz-visual">{q.visual}</div>}
+    {q.render ? q.render({ choose, done, wrong, answer: q.answer }) :
     <div className="quiz-options" style={{ gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` }}>
       {q.options.map((o) => {
         const cls = done && o.id === q.answer ? "quiz-option correct" : wrong.includes(o.id) ? "quiz-option wrong" : "quiz-option";
         return <button key={o.id} className={cls} aria-label={o.label} onClick={() => choose(o)}>{o.content}</button>;
       })}
-    </div>
+    </div>}
     <div className="feedback">{message}</div>
     {done && !last && <button className="primary-button" onClick={next}>Câu tiếp theo <span>→</span></button>}
   </div>;

@@ -22,6 +22,8 @@
     { "id": "pattern", "group": "think", "emoji": "🔁", "title": "Tìm quy luật", "subtitle": "Hình nào tiếp theo?", "color": "#E5F8E9" },
     { "id": "jigsaw", "group": "think", "emoji": "🧩", "title": "Ghép hình bí ẩn", "subtitle": "Ghép mảnh, đoán hình", "color": "#FFE8EF" },
     { "id": "missing", "group": "think", "emoji": "🚂", "title": "Điền số còn thiếu", "subtitle": "Kéo số vào chỗ trống", "color": "#E2F4FF" },
+    { "id": "math", "group": "think", "emoji": "➕", "title": "Cộng trừ vui", "subtitle": "Cộng trừ trong phạm vi 10", "color": "#FFF4D6" },
+    { "id": "compare", "group": "think", "emoji": "⚖️", "title": "Bên nào nhiều hơn?", "subtitle": "So sánh hai nhóm con vật", "color": "#E8F7E4" },
     { "id": "routine", "group": "life", "emoji": "🪥", "title": "Việc nhỏ mỗi ngày", "subtitle": "Đánh răng, rửa tay đúng thứ tự", "color": "#E2F4FF" },
     { "id": "market", "group": "life", "emoji": "🛒", "title": "Siêu thị tí hon", "subtitle": "Mua đúng đồ trong danh sách", "color": "#FFF3D6" },
     { "id": "room", "group": "life", "emoji": "🧸", "title": "Bé dọn phòng", "subtitle": "Cất đồ vào đúng chỗ", "color": "#E8F7E4" },
