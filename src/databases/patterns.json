@@ -1,0 +1,47 @@
+{
+  "_ghi_chu": "Tìm quy luật. templates: A, B, C, D là các hình khác nhau (vd. AAB = đỏ đỏ xanh). missing: end = hỏi hình tiếp theo, any = hỏi hình còn thiếu ở giữa. options = số đáp án. sets = bộ hình dùng (color, shape, fruit, animal, weather).",
+  "questionsPerLevel": 3,
+  "tiers": [
+    { "from": 1, "templates": ["AB"], "length": 5, "missing": "end", "options": 2, "sets": ["color"], "allow": 1 },
+    { "from": 4, "templates": ["AB", "AAB"], "length": 6, "missing": "end", "options": 3, "sets": ["color", "fruit", "animal"], "allow": 1 },
+    { "from": 7, "templates": ["ABB", "ABC", "AABB"], "length": 7, "missing": "end", "options": 3, "sets": ["color", "shape", "fruit", "animal", "weather"], "allow": 1 },
+    { "from": 11, "templates": ["ABC", "AABB", "ABB", "AAB"], "length": 7, "missing": "any", "options": 3, "sets": ["color", "shape", "fruit", "animal", "weather"], "allow": 2 },
+    { "from": 16, "templates": ["ABCD", "AABC", "ABCC", "ABAC"], "length": 8, "missing": "any", "options": 4, "sets": ["color", "shape", "fruit", "animal", "weather"], "allow": 2 }
+  ],
+  "sets": {
+    "color": [
+      { "id": "red", "hex": "#F56B6B", "n": "màu đỏ" },
+      { "id": "blue", "hex": "#65B9F2", "n": "màu xanh dương" },
+      { "id": "yellow", "hex": "#FFD34E", "n": "màu vàng" },
+      { "id": "green", "hex": "#65C98A", "n": "màu xanh lá" },
+      { "id": "purple", "hex": "#B28AE8", "n": "màu tím" }
+    ],
+    "shape": [
+      { "id": "circle", "color": "#F7A1C4", "n": "hình tròn" },
+      { "id": "square", "color": "#65B9F2", "n": "hình vuông" },
+      { "id": "triangle", "color": "#FFC44D", "n": "hình tam giác" },
+      { "id": "star", "color": "#B28AE8", "n": "ngôi sao" }
+    ],
+    "fruit": [
+      { "e": "🍎", "n": "quả táo" },
+      { "e": "🍌", "n": "quả chuối" },
+      { "e": "🍇", "n": "chùm nho" },
+      { "e": "🍊", "n": "quả cam" },
+      { "e": "🍓", "n": "quả dâu" }
+    ],
+    "animal": [
+      { "e": "🐶", "n": "con chó" },
+      { "e": "🐱", "n": "con mèo" },
+      { "e": "🐰", "n": "con thỏ" },
+      { "e": "🐻", "n": "con gấu" },
+      { "e": "🐸", "n": "con ếch" }
+    ],
+    "weather": [
+      { "e": "☀️", "n": "mặt trời" },
+      { "e": "🌧️", "n": "mây mưa" },
+      { "e": "☁️", "n": "đám mây" },
+      { "e": "🌈", "n": "cầu vồng" },
+      { "e": "⛄", "n": "người tuyết" }
+    ]
+  }
+}

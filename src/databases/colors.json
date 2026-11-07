@@ -1,0 +1,20 @@
+{
+  "_ghi_chu": "Màu sắc. objects = đồ vật có màu đó (câu hỏi 'Tìm đồ vật màu ...'). mixes = các cặp pha màu (a + b = result). white chỉ dùng khi pha màu.",
+  "colors": [
+    { "name": "Đỏ", "hex": "#F56B6B", "emoji": "🍎", "objects": [{ "e": "🍎", "n": "quả táo" }, { "e": "🍓", "n": "quả dâu" }, { "e": "🚒", "n": "xe cứu hỏa" }] },
+    { "name": "Vàng", "hex": "#FFD34E", "emoji": "🌞", "objects": [{ "e": "🍌", "n": "quả chuối" }, { "e": "🌻", "n": "hoa hướng dương" }, { "e": "🐥", "n": "gà con" }] },
+    { "name": "Xanh lá", "hex": "#65C98A", "emoji": "🍃", "objects": [{ "e": "🥦", "n": "bông cải xanh" }, { "e": "🐸", "n": "con ếch" }, { "e": "🍀", "n": "cỏ bốn lá" }] },
+    { "name": "Xanh dương", "hex": "#65B9F2", "emoji": "🐳", "objects": [{ "e": "🐳", "n": "cá voi" }, { "e": "💧", "n": "giọt nước" }, { "e": "🫐", "n": "quả việt quất" }] },
+    { "name": "Cam", "hex": "#FF9B55", "emoji": "🍊", "objects": [{ "e": "🍊", "n": "quả cam" }, { "e": "🥕", "n": "củ cà rốt" }, { "e": "🎃", "n": "quả bí ngô" }] },
+    { "name": "Tím", "hex": "#B28AE8", "emoji": "🍇", "objects": [{ "e": "🍇", "n": "chùm nho" }, { "e": "🍆", "n": "quả cà tím" }, { "e": "🔮", "n": "quả cầu" }] },
+    { "name": "Hồng", "hex": "#F7A1C4", "emoji": "🌸", "objects": [{ "e": "🌸", "n": "hoa đào" }, { "e": "🐷", "n": "chú lợn" }, { "e": "🦩", "n": "chim hồng hạc" }] },
+    { "name": "Nâu", "hex": "#A9784F", "emoji": "🐻", "objects": [{ "e": "🐻", "n": "chú gấu" }, { "e": "🥔", "n": "củ khoai tây" }, { "e": "🍫", "n": "thanh sô cô la" }] }
+  ],
+  "mixes": [
+    { "a": "Đỏ", "b": "Vàng", "result": "Cam" },
+    { "a": "Xanh dương", "b": "Vàng", "result": "Xanh lá" },
+    { "a": "Đỏ", "b": "Xanh dương", "result": "Tím" },
+    { "a": "Đỏ", "b": "Trắng", "result": "Hồng" }
+  ],
+  "white": { "name": "Trắng", "hex": "#FFFFFF" }
+}

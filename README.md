@@ -1,4 +1,4 @@
-# Bé Vui Học 🌈
+# Xoài Vui Học 🌈
 
 Website học tập tương tác cho bé 3–5 tuổi, làm bằng React + Vite. Giao diện ưu tiên điện thoại (mobile-first), chạy trên Safari iPhone và Chrome Android, deploy miễn phí lên Vercel.
 
@@ -13,21 +13,35 @@ Website học tập tương tác cho bé 3–5 tuổi, làm bằng React + Vite.
 
 | Màn | Nội dung |
 |---|---|
-| 🔤 Chữ cái | 29 chữ cái tiếng Việt, đọc theo âm (a, bờ, cờ…), có hình minh họa. Chơi: "Chữ nào đọc là bờ?", "Mèo bắt đầu bằng chữ nào?" |
+| 🔤 Chữ cái | 29 chữ cái tiếng Việt, đọc theo âm (a, bờ, cờ…), có hình minh họa. Tab **Nghe âm**: "Chữ nào đọc là bờ?". Tab **Nhìn hình** (cho bé đã ghép vần, có nút 💡 gợi ý âm đầu): "Mèo bắt đầu bằng chữ nào?" |
 | 🔢 Con số | Số 1–20. Chơi: tìm số, bên nào nhiều/ít hơn, số nào lớn/bé hơn |
 | 🎨 Màu sắc | 8 màu. Chơi: chọn màu, tìm đồ vật theo màu, pha màu |
 | 🔷 Hình dạng | Tròn, vuông, tam giác, chữ nhật, ngôi sao + đồ vật tương ứng |
 | 🦁 Động vật | 11 con vật: tên, tiếng kêu, nơi sống, thức ăn |
-| 🥕 Rau củ, trái cây | Tên, màu, phân loại rau củ / trái cây |
+| 🥭 Rau củ, trái cây | Tên, màu, phân loại rau củ / trái cây |
 | 🧒 Cơ thể bé | Chạm đúng bộ phận trên hình bạn nhỏ, "Mình dùng gì để nghe?" |
 | 🌦️ Thời tiết | Nắng, mưa, gió, 4 mùa, thiên nhiên, "Trời mưa con cần mang gì?" |
+
+**Thử thách tư duy** và **Cuộc sống quanh bé** – trò chơi có màn kiểu Candy Crush (xem mục 10).
+
+| Màn | Nội dung | Độ khó tăng dần theo màn |
+|---|---|---|
+| 🔍 Ai khác biệt? | Tìm hình không cùng nhóm | 4 → 6 hình, nhóm khác hẳn → nhóm gần giống (trái cây / rau củ) |
+| 👤 Tìm bóng | Kéo con vật vào đúng cái bóng | 2 → 5 bạn, khác loài → cùng loài (toàn chim, toàn côn trùng…) |
+| 🔁 Tìm quy luật | Hình nào tiếp theo / còn thiếu? | AB → AAB, ABC → ABCD, thiếu ở cuối → thiếu ở giữa |
+| 🧩 Ghép hình bí ẩn | Ghép mảnh để đoán hình | 2 → 4 → 6 → 9 mảnh |
+| 🪥 Việc nhỏ mỗi ngày | Xếp các bước đúng thứ tự: đánh răng, rửa tay, đi ngủ… | 3 → 4 → 5 bước |
+| 🛒 Siêu thị tí hon | Mua đúng đồ và đủ số lượng trong danh sách | Nhiều món hơn, số lượng 1–3, thêm món dễ nhầm |
+| 🧸 Bé dọn phòng | Kéo đồ vào hộp đồ chơi, tủ quần áo, kệ sách, thùng rác | 2 → 4 chỗ cất, 4 → 11 món |
+| 🚦 Giao thông | Đèn tín hiệu, an toàn khi đi đường, biển báo | Thêm câu an toàn và biển báo |
 
 **Trò chơi vui**
 
 | Màn | Nội dung |
 |---|---|
 | 🐾 Đếm con vật | Đếm và chọn đáp án đúng |
-| 🧩 Kéo thả số | Kéo số vào giỏ bằng ngón tay (Pointer Events, chạy được trên cảm ứng) |
+| 🧺 Kéo thả số | Kéo số vào giỏ bằng ngón tay (Pointer Events, chạy được trên cảm ứng) |
+| 🏁 Đua vui | 2 tab Động vật / Xe cộ (mỗi tab 10 tay đua). Chọn 2–5 bạn, bấm Bắt đầu là đua, ai về nhất là ngẫu nhiên |
 
 **Góc kỷ niệm**
 
@@ -35,7 +49,17 @@ Website học tập tương tác cho bé 3–5 tuổi, làm bằng React + Vite.
 |---|---|
 | 🖼️ Gallery | Ảnh của bé xếp kiểu Masonry (so le 2 cột, 3 cột trên màn hình lớn). Chạm để xem to, vuốt trái/phải để chuyển ảnh |
 
-**Thành tích**: số sao và số câu đúng, lưu ngay trên trình duyệt (LocalStorage).
+**🏫 Lớp Dưa Góp** – tab thứ hai ngay trên đầu trang chủ, lớp học gia đình:
+
+| Màn | Nội dung |
+|---|---|
+| Lớp học | Bảng đen, bục giảng, chuông 🔔; cả nhà ngồi bàn 2 người. Chạm một người để nghe tên và bạn cùng bàn. 🔀 Đổi chỗ (chạm 2 người, hoặc chạm 1 người rồi chạm ghế trống), 🎲 Xếp ngẫu nhiên. Chỗ ngồi được nhớ lại |
+| 📋 Điểm danh | Chạm ảnh để đánh dấu có mặt / vắng; người vắng mờ trong lớp và không bị gọi. Sang ngày mới tự đặt lại cả lớp có mặt |
+| 🎡 Kiểm tra miệng | Vòng quay ảnh người có mặt → "Mời … lên bảng!" + câu hỏi ngẫu nhiên từ các màn học (con vật, màu, đếm, chữ cái, hình, giao thông, cơ thể, thời tiết, thử thách vui), đồng hồ 10 giây, nút xem đáp án, cả nhà chấm 👍/👎. Chế độ **Xoài làm cô giáo** (Xoài không bị gọi) |
+| 👀 Ai đây? | Nhìn ảnh chọn tên, hoặc nghe tên chọn ảnh |
+| 🏆 Bảng vàng | Bục 1-2-3, xếp hạng sao, 👑 lớp trưởng (hiện trên chỗ ngồi), nút "Sang tuần mới" |
+
+**Thành tích**: số sao, số câu đúng và số màn đã vượt qua, lưu ngay trên trình duyệt (LocalStorage).
 
 ---
 
@@ -57,24 +81,35 @@ Website học tập tương tác cho bé 3–5 tuổi, làm bằng React + Vite.
 ```
 be-vui-hoc-react-vite/
 ├── public/
-│   └── favicon.svg
+│   ├── favicon.svg           # Icon quả xoài (tab trình duyệt)
+│   ├── icon-32.png, apple-touch-icon.png, icon-192.png, icon-512.png  # Icon cho trình duyệt, màn hình chính iPhone/Android
+│   └── manifest.webmanifest  # Tên và icon khi "Thêm vào màn hình chính"
 ├── src/
 │   ├── assets/
-│   │   └── gallery/          # Ảnh cho màn Gallery (thả ảnh vào đây là tự hiện)
+│   │   ├── gallery/          # Ảnh cho màn Gallery (thả ảnh vào đây là tự hiện)
+│   │   └── family/           # Ảnh đại diện Lớp Dưa Góp (<id>.jpg, ~360px)
+│   ├── databases/            # TOÀN BỘ dữ liệu nội dung dạng JSON (sửa ở đây, xem mục 9)
+│   ├── family/               # Lớp Dưa Góp: lớp học, điểm danh, vòng quay, Ai đây?, bảng vàng
 │   ├── components/
 │   │   ├── BottomNav.jsx     # Thanh điều hướng dưới
-│   │   ├── ChoiceQuiz.jsx    # Bộ câu hỏi trắc nghiệm dùng chung (đọc câu hỏi, chấm, cộng sao)
+│   │   ├── ChoiceQuiz.jsx    # Câu hỏi trắc nghiệm của các màn học (mỗi câu đúng 1 sao)
 │   │   ├── GameCard.jsx      # Thẻ màn chơi ở trang chủ
 │   │   ├── Header.jsx
-│   │   └── ModeTabs.jsx      # Tab Học / Chơi
+│   │   ├── LevelGame.jsx     # Bản đồ màn, chấm 1–3 sao, mở khóa màn sau
+│   │   ├── LevelQuiz.jsx     # Một màn gồm nhiều câu hỏi (dùng cho trò có màn)
+│   │   ├── ModeTabs.jsx      # Tab Học / Chơi
+│   │   └── useDragDrop.jsx   # Kéo thả bằng ngón tay dùng chung
+│   ├── levels/
+│   │   └── progress.js       # Lưu số sao từng màn
 │   ├── games/                # Mỗi màn là 1 file
 │   │   ├── Alphabet.jsx  Numbers.jsx  Colors.jsx  Shapes.jsx
 │   │   ├── AnimalWorld.jsx  FruitsVeggies.jsx  Body.jsx  Weather.jsx
+│   │   ├── OddOneOut.jsx  ShadowMatch.jsx  Patterns.jsx  Jigsaw.jsx
+│   │   ├── DailyRoutine.jsx  Supermarket.jsx  CleanRoom.jsx  Traffic.jsx
 │   │   ├── AnimalCounting.jsx  DragNumbers.jsx
 │   │   └── Gallery.jsx
-│   ├── App.jsx               # Danh sách màn + trang chủ + giọng đọc + số sao
-│   ├── data.js               # TOÀN BỘ nội dung học (sửa ở đây)
-│   ├── utils.js              # Hàm trộn ngẫu nhiên, tạo đáp án
+│   ├── App.jsx               # Trang chủ, nối id màn với component, giọng đọc, số sao
+│   ├── utils.js              # Hàm ngẫu nhiên (có seed theo số màn), tạo đáp án
 │   ├── main.jsx
 │   └── style.css
 ├── index.html
@@ -133,7 +168,7 @@ Thư mục đã được `git init` và nối với repo `xoaidihoc`. File `.git
 ```bash
 git status                       # xem file nào sẽ được đẩy lên
 git add .
-git commit -m "Bé Vui Học: các màn học và trò chơi"
+git commit -m "Xoài Vui Học: các màn học và trò chơi"
 git push -u origin main
 ```
 
@@ -199,69 +234,66 @@ Mở từ biểu tượng trên màn hình chính sẽ giống một app, và tr
 
 ### Sửa nội dung có sẵn
 
-Mọi nội dung nằm trong **`src/data.js`**, không cần động vào code các màn:
+Mọi nội dung nằm trong thư mục **`src/databases/`**, mỗi màn một file JSON. Component chỉ đọc dữ liệu, không khai báo nội dung bên trong.
 
-| Biến | Dùng cho |
+| File | Dùng cho |
 |---|---|
-| `alphabet` | Chữ cái: `sound` (cách đọc âm), `word` + `emoji` (từ và hình ví dụ) |
-| `countingEmojis` | Hình dùng để đếm trong màn Con số |
-| `colors`, `colorMixes` | Màu, đồ vật theo màu, các cặp pha màu |
-| `shapes` | Hình dạng và đồ vật tương ứng |
-| `animals`, `habitats`, `foods` | Con vật, tiếng kêu, nơi sống, thức ăn |
-| `animalSets` | Trò Đếm con vật |
-| `produce`, `produceTypes` | Rau củ, trái cây |
-| `bodyParts`, `bodyUses` | Cơ thể bé |
-| `weather`, `seasons`, `nature`, `weatherGear` | Thời tiết, các mùa, thiên nhiên |
+| `games.json` | Trang chủ (lời chào, hình 🥭), các nhóm, danh sách màn: tên, emoji, màu thẻ |
+| `messages.json` | Câu khen, câu nhắc khi sai, câu báo hoàn thành màn |
+| `alphabet.json` | Chữ cái: `sound` (cách đọc âm), `word` + `emoji` (từ và hình ví dụ) |
+| `numbers.json` | Số lớn nhất, hình dùng để đếm |
+| `colors.json` | Màu, đồ vật theo màu, các cặp pha màu |
+| `shapes.json` | Hình dạng và đồ vật tương ứng |
+| `animals.json` | Con vật, tiếng kêu, nơi sống, thức ăn |
+| `produce.json` | Rau củ, trái cây |
+| `body.json` | Bộ phận cơ thể, câu hỏi "Mình dùng gì để…?" |
+| `weather.json` | Thời tiết, các mùa, thiên nhiên, đồ cần mang |
+| `odd-one-out.json`, `shadows.json`, `patterns.json`, `jigsaw.json` | Các trò Thử thách tư duy |
+| `routines.json`, `supermarket.json`, `clean-room.json`, `traffic.json` | Các trò Cuộc sống quanh bé |
+| `animal-counting.json`, `drag-numbers.json`, `race.json` | Đếm con vật, Kéo thả số, Đua vui |
 
-Ví dụ thêm một con vật:
+Mỗi file có dòng `_ghi_chu` giải thích ý nghĩa các trường. Ví dụ thêm một con vật vào `animals.json`:
 
-```js
-// src/data.js → animals
-{ name: "Con ngựa", emoji: "🐴", sound: "hí hí", habitat: "farm", food: "grass" },
+```json
+{ "name": "Con ngựa", "emoji": "🐴", "sound": "hí hí", "habitat": "farm", "food": "grass" }
 ```
 
-> Câu được đọc to nên dùng "con" thay cho "bé" (một số giọng đọc phát âm "bé" thành "bớ").
+**Lưu ý khi sửa JSON** (sai cú pháp là website không build được):
+
+- Chuỗi dùng dấu nháy kép `"…"`, không dùng nháy đơn.
+- Không có dấu phẩy sau phần tử cuối cùng.
+- Không viết chú thích `//` trong file JSON.
+- Câu được đọc to nên dùng "con" thay cho "bé" (một số giọng đọc phát âm "bé" thành "bớ").
+
+### Chỉnh độ khó các trò có màn
+
+Mỗi file của trò có màn có mảng `tiers`. Từ màn `from` trở đi sẽ dùng cấu hình đó, ví dụ trong `shadows.json`:
+
+```json
+"tiers": [
+  { "from": 1, "count": 2, "similar": false, "allow": 1 },
+  { "from": 4, "count": 3, "similar": false, "allow": 1 },
+  { "from": 11, "count": 4, "similar": true, "allow": 2 }
+]
+```
+
+- Màn 1–3: ghép 2 bạn; màn 4–10: 3 bạn; từ màn 11: 4 bạn cùng nhóm (khó hơn).
+- `allow`: số lần sai tối đa để vẫn được 2 sao (không sai lần nào: 3 sao; sai nhiều hơn: 1 sao).
+- Muốn thêm nấc khó: thêm một dòng mới với `from` lớn hơn.
 
 ### Thêm một màn mới
 
-1. Tạo file `src/games/TenMan.jsx`, dùng lại `ModeTabs` và `ChoiceQuiz`:
+1. Thêm dữ liệu vào một file mới trong `src/databases/`, ví dụ `ten-man.json`.
+2. Tạo `src/games/TenMan.jsx`:
+   - **Màn học** (tab Học/Chơi, mỗi câu đúng 1 sao): dùng `ModeTabs` + `ChoiceQuiz`, xem mẫu ở `Shapes.jsx`.
+   - **Trò có màn** (bản đồ màn, 1–3 sao): viết `makeLevel(soMan, rng)` trả về cấu hình màn, rồi dùng `LevelGame`. Trò dạng câu hỏi dùng `LevelQuiz` (xem `OddOneOut.jsx`), trò kéo thả dùng `useDragDrop` (xem `ShadowMatch.jsx`).
+3. Thêm thẻ vào `games` trong `games.json`:
 
-   ```jsx
-   import { useState } from "react";
-   import ModeTabs, { LEARN_PLAY } from "../components/ModeTabs";
-   import ChoiceQuiz from "../components/ChoiceQuiz";
-
-   function makeQuestion(prev) {
-     return {
-       prompt: "Đâu là con mèo?",           // chữ hiển thị
-       say: "Đâu là con mèo?",              // câu đọc to
-       options: [
-         { id: "cat", label: "Con mèo", content: "🐱" },
-         { id: "dog", label: "Con chó", content: "🐶" },
-       ],
-       answer: "cat",
-       praise: "Đúng rồi! Đây là con mèo",  // không bắt buộc
-     };
-   }
-
-   export default function TenMan({ speak, onCorrect }) {
-     const [mode, setMode] = useState("learn");
-     return <section className="game-panel">
-       <ModeTabs tabs={LEARN_PLAY} value={mode} onChange={setMode} />
-       {mode === "learn"
-         ? <p>Phần học…</p>
-         : <ChoiceQuiz makeQuestion={makeQuestion} speak={speak} onCorrect={onCorrect} />}
-     </section>;
-   }
+   ```json
+   { "id": "tenman", "group": "think", "emoji": "🐱", "title": "Tên màn", "subtitle": "Mô tả ngắn", "color": "#FFF0D9" }
    ```
 
-2. Mở `src/App.jsx`, import và thêm 1 dòng vào mảng `games`:
-
-   ```js
-   { id:"tenman", group:"learn", emoji:"🐱", title:"Tên màn", subtitle:"Mô tả ngắn", color:"#FFF0D9", Component: TenMan },
-   ```
-
-   `group: "learn"` hiện ở *Góc học tập*, `group: "play"` hiện ở *Trò chơi vui*.
+4. Mở `src/App.jsx`, import component và thêm `tenman: TenMan` vào `COMPONENTS`. Nếu là trò có màn, thêm `"tenman"` vào `LEVEL_GAMES` để thẻ hiện "Màn X →".
 
 ### Thêm ảnh vào Gallery
 
@@ -269,8 +301,29 @@ Ví dụ thêm một con vật:
 2. Ảnh tự hiện trong màn Gallery, sắp xếp theo tên file (`anh01.jpg`, `anh02.jpg`… để điều khiển thứ tự).
 3. Mẹo:
    - Đặt tên file **không dấu, không khoảng trắng** (vd. `xoai-sinh-nhat.jpg`), tránh lỗi khi build trên Vercel.
-   - Ảnh từ điện thoại nên thu nhỏ còn khoảng 1000–1600px chiều dài, dưới 500KB/ảnh để mở nhanh trên 4G.
+   - Chép ảnh xong chạy `python3 scripts/shrink-images.py` để thu nhỏ còn cạnh dài 1280px (~100–300KB/ảnh), mở nhanh trên 4G.
    - Ảnh ở lưới được cắt khung so le để tạo bố cục Masonry; khi chạm mở to sẽ thấy đầy đủ ảnh gốc.
+
+### Thêm / sửa thành viên Lớp Dưa Góp
+
+1. Chép ảnh vào `src/assets/family/`, đặt tên file không dấu, ví dụ `minh.jpg`.
+2. Thu nhỏ ảnh (ảnh điện thoại 2–7MB → khoảng 20–40KB, thay luôn file gốc):
+
+   ```bash
+   pip3 install pillow          # chỉ cần lần đầu
+   python3 scripts/shrink-images.py
+   ```
+
+3. Thêm vào `members` trong `src/databases/family.json`:
+
+   ```json
+   { "id": "minh", "name": "Chú Minh", "color": "#e3f0ff" }
+   ```
+
+   - `id` trùng tên file (không có đuôi).
+   - Mặt nhỏ hoặc lệch thì thêm `"focus": "50% 30%"` (vị trí mặt theo chiều ngang, dọc) và `"zoom": 1.6` (phóng to).
+   - Thứ tự trong `members` là chỗ ngồi mặc định.
+4. Câu "thử thách vui" ở Kiểm tra miệng sửa trong `funQuestions` của cùng file.
 
 ### Quy trình cập nhật website
 
@@ -283,32 +336,47 @@ git push             # Vercel tự deploy bản mới
 
 ---
 
-## 10. Dữ liệu và tiến độ
+## 10. Hệ thống màn chơi
 
-- Số sao lưu trong LocalStorage của trình duyệt với 2 khoá: `be-vui-stars`, `be-vui-completed`.
+Các trò **Thử thách tư duy** và **Cuộc sống quanh bé** chơi theo màn, giống Candy Crush:
+
+- **Bản đồ màn:** qua màn trước mới mở khóa màn sau. Mỗi 10 màn có một mốc thưởng 🎁.
+- **Lưu ngay khi xong màn:** kết quả được lưu đúng lúc bé làm xong, thoát ra ngay cũng không mất.
+- **1–3 sao mỗi màn:** không sai lần nào được 3 sao, sai ít (trong mức `allow`) được 2 sao, còn lại 1 sao. Chơi lại chỉ cộng thêm phần sao tăng lên, không cộng trùng.
+- **Màn vô tận:** không cần tạo sẵn từng màn. `makeLevel` sinh màn từ số màn và bảng `tiers` trong JSON. Mỗi số màn dùng một hạt giống ngẫu nhiên cố định, nên "màn 7" lần nào chơi cũng giống nhau.
+- **Tăng độ khó** bằng số lượng hình, mức độ giống nhau và số bước, không bằng cách bấm giờ (phù hợp bé 3–5 tuổi).
+
+---
+
+## 11. Dữ liệu và tiến độ
+
+- Số sao lưu trong LocalStorage của trình duyệt với các khoá: `be-vui-stars`, `be-vui-completed` và `be-vui-levels` (số sao từng màn).
+- Lớp Dưa Góp lưu riêng: `dua-gop-seats` (chỗ ngồi), `dua-gop-attendance` (điểm danh trong ngày), `dua-gop-stars` (sao của từng người).
 - Mỗi máy, mỗi trình duyệt, mỗi địa chỉ (localhost / Vercel) có bộ số riêng, không đồng bộ.
 - Mất khi xoá dữ liệu trình duyệt hoặc dùng tab ẩn danh. Đặt lại trong tab **Thành tích**.
 - Muốn đồng bộ nhiều máy hoặc theo dõi nhiều bé → cần thêm backend (ví dụ Supabase, Firebase).
 
 ---
 
-## 11. Xử lý sự cố
+## 12. Xử lý sự cố
 
 | Hiện tượng | Cách xử lý |
 |---|---|
 | `npm install` báo lỗi phiên bản | Kiểm tra `node -v`, cài Node 22 (qua nvm hoặc nodejs.org) |
 | Điện thoại không mở được link `Network` | Cùng Wi-Fi, chạy với `--host`, cho phép node qua tường lửa macOS |
 | Không có tiếng | Tăng âm lượng, tắt chế độ im lặng, cài giọng Tiếng Việt; bé cần chạm vào màn hình ít nhất 1 lần trước khi app đọc được |
-| Máy đọc sai một từ | Do giọng đọc của thiết bị; đổi cách viết câu trong `data.js` hoặc thay bằng file âm thanh thu sẵn |
+| Máy đọc sai một từ | Do giọng đọc của thiết bị; đổi cách viết câu trong `src/databases/*.json` hoặc thay bằng file âm thanh thu sẵn |
+| Build lỗi sau khi sửa JSON | Kiểm tra dấu phẩy, dấu nháy kép (xem mục 9) |
 | Vercel build lỗi `Could not resolve "./games/..."` | Tên file sai chữ hoa/thường. macOS không phân biệt nhưng Vercel (Linux) có, ví dụ `body.jsx` ≠ `Body.jsx` |
 | Tải lại trang bị 404 | Kiểm tra `vercel.json` có trong repo |
 | Push bị từ chối (`publickey`) | Xem mục 6 |
 
 ---
 
-## 12. Hướng phát triển tiếp
+## 13. Hướng phát triển tiếp
 
-- Màn chơi tương tác: Tìm đúng bóng, Lật thẻ tìm cặp, Nghe âm thanh đoán hình, Ghép hình, Tô màu, Phân loại đồ vật, Tìm đường.
+- Trò sáng tạo: Tô màu, Nhà thiết kế nhí, Nhạc sĩ nhí, Lắp ráp robot.
+- Lật thẻ tìm cặp, Nghe âm thanh đoán hình, Tìm đường về nhà.
+- Nhiệm vụ mỗi ngày, Bộ sưu tập sticker, Sách truyện tương tác, Thú cưng đồng hành.
 - File âm thanh thu sẵn (`public/audio/*.mp3`) cho chữ cái, số và câu khen, để mọi máy đọc giống nhau.
-- Cấp độ: hoàn thành cấp 1 mới mở cấp 2.
 - Khu vực phụ huynh: thời gian học, màn đã chơi, số câu đúng.

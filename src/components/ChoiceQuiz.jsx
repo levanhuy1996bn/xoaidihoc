@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
+import messages from "../databases/messages.json";
 
-export const PRAISE = "Đúng rồi! Con giỏi quá!";
-export const TRY_AGAIN = "Chưa đúng, mình thử lại nhé";
+export const PRAISE = messages.praise;
+export const TRY_AGAIN = messages.tryAgain;
 
 /**
  * Bộ câu hỏi chọn đáp án dùng chung cho các màn.
  * makeQuestion(prev) trả về:
- *   { prompt, say, visual?, options: [{ id, content, label }], answer, praise?, columns?, render? }
+ *   { prompt, say, visual?, options: [{ id, content, label }], answer, praise?, columns?, render?, hint? }
+ * - hint: câu gợi ý, hiện nút 💡 để bé nghe
  * - render({ choose, done, wrong, answer }): tự vẽ phần chọn đáp án (vd. chạm vào hình), thay cho lưới nút
  * - prompt: chữ hiển thị; say: câu đọc to; visual: hình minh họa phía trên
  * - praise: câu khen riêng khi đúng (mặc định PRAISE)
@@ -43,7 +45,10 @@ export default function ChoiceQuiz({ makeQuestion, speak, onCorrect, columns = 3
   return <div className="quiz">
     <div className="quiz-question">
       <h3>{q.prompt}</h3>
-      <button className="replay-button" onClick={() => speak(q.say)} aria-label="Nghe lại câu hỏi">🔊</button>
+      <div className="quiz-buttons">
+        {q.hint && <button className="replay-button" onClick={() => speak(q.hint)} aria-label="Nghe gợi ý">💡</button>}
+        <button className="replay-button" onClick={() => speak(q.say)} aria-label="Nghe lại câu hỏi">🔊</button>
+      </div>
     </div>
     {q.visual && <div className="quiz-visual">{q.visual}</div>}
     {q.render ? q.render({ choose, done, wrong, answer: q.answer }) :

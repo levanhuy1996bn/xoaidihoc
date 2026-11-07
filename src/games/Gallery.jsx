@@ -25,18 +25,23 @@ function Lightbox({ index, onClose, onChange }) {
     return () => { document.removeEventListener("keydown", onKey); document.body.style.overflow = overflow; };
   }, [index]);
 
-  function onPointerDown(e) { startX.current = e.clientX; }
+  const swiped = useRef(false);
+  function onPointerDown(e) { startX.current = e.clientX; swiped.current = false; }
   function onPointerUp(e) {
     if (startX.current === null) return;
     const dx = e.clientX - startX.current;
     startX.current = null;
-    if (Math.abs(dx) > 50) go(dx < 0 ? 1 : -1); // vuốt trái: ảnh sau, vuốt phải: ảnh trước
-    else if (e.target === e.currentTarget) onClose(); // chạm ra nền tối để đóng
+    if (Math.abs(dx) > 50) { swiped.current = true; go(dx < 0 ? 1 : -1); } // vuốt trái: ảnh sau, vuốt phải: ảnh trước
+  }
+  // Đóng bằng sự kiện click (không dùng pointerup) để cú chạm không "xuyên" xuống nút phía dưới
+  function onClick(e) {
+    if (swiped.current) { swiped.current = false; return; }
+    if (e.target === e.currentTarget) onClose(); // chạm ra nền tối để đóng
   }
 
   const photo = photos[index];
   return <div className="lightbox" role="dialog" aria-label="Xem ảnh"
-    onPointerDown={onPointerDown} onPointerUp={onPointerUp} onPointerCancel={() => { startX.current = null; }}>
+    onPointerDown={onPointerDown} onPointerUp={onPointerUp} onClick={onClick} onPointerCancel={() => { startX.current = null; }}>
     <img src={photo.src} alt={photo.name} draggable="false" />
     <button className="lightbox-close" aria-label="Đóng" onPointerUp={(e) => e.stopPropagation()} onClick={onClose}>✕</button>
     {photos.length > 1 && <>

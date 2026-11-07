@@ -1,0 +1,28 @@
+{
+  "_ghi_chu": "Ghép hình bí ẩn. tiers: rows x cols = số mảnh ghép. pictures: hình sẽ được cắt thành các mảnh.",
+  "tiers": [
+    { "from": 1, "rows": 1, "cols": 2, "allow": 1 },
+    { "from": 4, "rows": 2, "cols": 2, "allow": 1 },
+    { "from": 8, "rows": 2, "cols": 3, "allow": 2 },
+    { "from": 12, "rows": 3, "cols": 3, "allow": 3 }
+  ],
+  "pictures": [
+    { "e": "🦁", "n": "con sư tử" },
+    { "e": "🐘", "n": "con voi" },
+    { "e": "🦒", "n": "hươu cao cổ" },
+    { "e": "🐼", "n": "gấu trúc" },
+    { "e": "🐢", "n": "con rùa" },
+    { "e": "🦋", "n": "con bướm" },
+    { "e": "🚒", "n": "xe cứu hỏa" },
+    { "e": "🚀", "n": "tên lửa" },
+    { "e": "🏰", "n": "lâu đài" },
+    { "e": "🐬", "n": "cá heo" },
+    { "e": "🐙", "n": "bạch tuộc" },
+    { "e": "🚂", "n": "tàu hỏa" },
+    { "e": "🍉", "n": "quả dưa hấu" },
+    { "e": "🌻", "n": "hoa hướng dương" },
+    { "e": "🦄", "n": "kỳ lân" },
+    { "e": "🐸", "n": "con ếch" },
+    { "e": "🥭", "n": "quả xoài" }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "_ghi_chu": "Cơ thể bé. id phải khớp với vùng chạm trên hình bạn nhỏ: hair, eyes, ears, nose, mouth, hands, tummy, feet. uses = câu hỏi 'Mình dùng gì để ...?'.",
+  "parts": [
+    { "id": "hair", "name": "Mái tóc", "short": "tóc", "emoji": "💇", "use": "Tóc mọc trên đầu" },
+    { "id": "eyes", "name": "Đôi mắt", "short": "mắt", "emoji": "👀", "use": "Mắt để nhìn" },
+    { "id": "ears", "name": "Đôi tai", "short": "tai", "emoji": "👂", "use": "Tai để nghe" },
+    { "id": "nose", "name": "Cái mũi", "short": "mũi", "emoji": "👃", "use": "Mũi để ngửi" },
+    { "id": "mouth", "name": "Cái miệng", "short": "miệng", "emoji": "👄", "use": "Miệng để ăn và nói" },
+    { "id": "hands", "name": "Đôi tay", "short": "tay", "emoji": "✋", "use": "Tay để cầm nắm" },
+    { "id": "tummy", "name": "Cái bụng", "short": "bụng", "emoji": "🍚", "use": "Bụng no khi con ăn cơm" },
+    { "id": "feet", "name": "Đôi chân", "short": "chân", "emoji": "🦶", "use": "Chân để đi và chạy" }
+  ],
+  "uses": [
+    { "ask": "Mình dùng gì để nhìn?", "part": "eyes" },
+    { "ask": "Mình dùng gì để nghe?", "part": "ears" },
+    { "ask": "Mình dùng gì để ngửi?", "part": "nose" },
+    { "ask": "Mình dùng gì để ăn?", "part": "mouth" },
+    { "ask": "Mình dùng gì để cầm đồ chơi?", "part": "hands" },
+    { "ask": "Mình dùng gì để đi?", "part": "feet" }
+  ]
+}

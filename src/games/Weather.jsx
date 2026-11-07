@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { weather, seasons, nature, weatherGear } from "../data";
+import data from "../databases/weather.json";
 import { pickOne, choicesWith, shuffle } from "../utils";
 import ModeTabs, { LEARN_PLAY } from "../components/ModeTabs";
 import ChoiceQuiz from "../components/ChoiceQuiz";
+
+const { weather, seasons, gear: weatherGear } = data;
 
 const lower = (s) => s.toLowerCase();
 const cardOption = (x) => ({ id: x.name, label: x.name, content: <>{x.emoji}<small>{x.name}</small></> });
@@ -37,11 +39,8 @@ function makeQuestion(prev) {
   };
 }
 
-const SECTIONS = [
-  { title: "☁️ THỜI TIẾT", items: weather },
-  { title: "🗓️ CÁC MÙA TRONG NĂM", items: seasons },
-  { title: "🌳 THIÊN NHIÊN", items: nature },
-];
+// Các nhóm thẻ ở phần Học (tiêu đề lấy từ weather.json)
+const SECTIONS = data.sections.map((s) => ({ title: s.title, items: data[s.key] }));
 
 export default function Weather({ speak, onCorrect }) {
   const [mode, setMode] = useState("learn");

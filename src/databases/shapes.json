@@ -1,0 +1,10 @@
+{
+  "_ghi_chu": "Hình dạng. id phải là một trong: circle, square, triangle, rectangle, star (để vẽ hình). objects = đồ vật có hình đó.",
+  "shapes": [
+    { "id": "circle", "name": "Hình tròn", "color": "#F7A1C4", "objects": [{ "e": "⚽", "n": "quả bóng" }, { "e": "🍪", "n": "bánh quy" }, { "e": "🕐", "n": "đồng hồ" }, { "e": "🍩", "n": "bánh vòng" }] },
+    { "id": "square", "name": "Hình vuông", "color": "#65B9F2", "objects": [{ "e": "🎁", "n": "hộp quà" }, { "e": "🧇", "n": "bánh quế" }, { "e": "🎲", "n": "xúc xắc" }] },
+    { "id": "triangle", "name": "Hình tam giác", "color": "#FFC44D", "objects": [{ "e": "🍕", "n": "miếng bánh pizza" }, { "e": "⛺", "n": "cái lều" }, { "e": "📐", "n": "cái thước" }] },
+    { "id": "rectangle", "name": "Hình chữ nhật", "color": "#65C98A", "objects": [{ "e": "📱", "n": "điện thoại" }, { "e": "🚪", "n": "cánh cửa" }, { "e": "📕", "n": "quyển sách" }] },
+    { "id": "star", "name": "Hình ngôi sao", "color": "#B28AE8", "objects": [{ "e": "⭐", "n": "ngôi sao" }, { "e": "🌟", "n": "ngôi sao lấp lánh" }] }
+  ]
+}

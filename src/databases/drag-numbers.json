@@ -1,0 +1,9 @@
+{
+  "_ghi_chu": "Trò Kéo thả số. count = số đồ vật (đáp án), label = tên đồ vật.",
+  "rounds": [
+    { "count": 2, "emoji": "🍓", "label": "quả dâu" },
+    { "count": 3, "emoji": "🍎", "label": "quả táo" },
+    { "count": 4, "emoji": "🐣", "label": "chú gà" },
+    { "count": 5, "emoji": "🦋", "label": "con bướm" }
+  ]
+}

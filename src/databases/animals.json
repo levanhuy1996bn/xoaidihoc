@@ -1,0 +1,34 @@
+{
+  "_ghi_chu": "Thế giới động vật. habitat và food là khóa trong habitats/foods. sound = tiếng kêu (null nếu không có).",
+  "animals": [
+    { "name": "Con mèo", "emoji": "🐱", "sound": "meo meo", "habitat": "home", "food": "fish" },
+    { "name": "Con chó", "emoji": "🐶", "sound": "gâu gâu", "habitat": "home", "food": "bone" },
+    { "name": "Con gà trống", "emoji": "🐓", "sound": "ò ó o", "habitat": "farm", "food": "rice" },
+    { "name": "Con vịt", "emoji": "🦆", "sound": "cạp cạp", "habitat": "farm", "food": "shrimp" },
+    { "name": "Con bò", "emoji": "🐄", "sound": "ò ò", "habitat": "farm", "food": "grass" },
+    { "name": "Con lợn", "emoji": "🐷", "sound": "ụt ịt", "habitat": "farm", "food": "veggie" },
+    { "name": "Con cừu", "emoji": "🐑", "sound": "be be", "habitat": "farm", "food": "grass" },
+    { "name": "Con ếch", "emoji": "🐸", "sound": "ộp ộp", "habitat": "water", "food": "mosquito" },
+    { "name": "Con cá", "emoji": "🐠", "sound": null, "habitat": "water", "food": "worm" },
+    { "name": "Con khỉ", "emoji": "🐵", "sound": "khẹc khẹc", "habitat": "forest", "food": "banana" },
+    { "name": "Con sư tử", "emoji": "🦁", "sound": "gừ gừ", "habitat": "forest", "food": "meat" }
+  ],
+  "habitats": {
+    "home": { "name": "Trong nhà", "emoji": "🏠", "say": "trong nhà" },
+    "farm": { "name": "Trang trại", "emoji": "🚜", "say": "ở trang trại" },
+    "water": { "name": "Dưới nước", "emoji": "🌊", "say": "dưới nước" },
+    "forest": { "name": "Trong rừng", "emoji": "🌳", "say": "trong rừng" }
+  },
+  "foods": {
+    "fish": { "name": "Cá", "emoji": "🐟" },
+    "bone": { "name": "Xương", "emoji": "🦴" },
+    "rice": { "name": "Thóc", "emoji": "🌾" },
+    "shrimp": { "name": "Tép", "emoji": "🦐" },
+    "grass": { "name": "Cỏ", "emoji": "🌿" },
+    "veggie": { "name": "Rau", "emoji": "🥬" },
+    "mosquito": { "name": "Muỗi", "emoji": "🦟" },
+    "worm": { "name": "Giun", "emoji": "🪱" },
+    "banana": { "name": "Chuối", "emoji": "🍌" },
+    "meat": { "name": "Thịt", "emoji": "🍖" }
+  }
+}

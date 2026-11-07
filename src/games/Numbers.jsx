@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { countingEmojis } from "../data";
+import { max as MAX, countingEmojis } from "../databases/numbers.json";
 import { pickOne, makeOptions, shuffle } from "../utils";
 import ModeTabs, { LEARN_PLAY } from "../components/ModeTabs";
 import ChoiceQuiz from "../components/ChoiceQuiz";
 
-const MAX = 20;
 const randInt = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
 
 function twoDifferent(min, max) {

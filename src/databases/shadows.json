@@ -1,0 +1,54 @@
+{
+  "_ghi_chu": "Tìm bóng. tiers: count = số bạn cần ghép; similar = true thì lấy các bạn trong cùng một nhóm (bóng giống nhau hơn, khó hơn).",
+  "tiers": [
+    { "from": 1, "count": 2, "similar": false, "allow": 1 },
+    { "from": 4, "count": 3, "similar": false, "allow": 1 },
+    { "from": 7, "count": 4, "similar": false, "allow": 2 },
+    { "from": 11, "count": 4, "similar": true, "allow": 2 },
+    { "from": 16, "count": 5, "similar": true, "allow": 2 }
+  ],
+  "groups": {
+    "bird": [
+      { "e": "🐓", "n": "con gà trống" },
+      { "e": "🦆", "n": "con vịt" },
+      { "e": "🦜", "n": "con vẹt" },
+      { "e": "🦉", "n": "con cú" },
+      { "e": "🦢", "n": "thiên nga" },
+      { "e": "🐧", "n": "chim cánh cụt" }
+    ],
+    "four": [
+      { "e": "🐕", "n": "con chó" },
+      { "e": "🐈", "n": "con mèo" },
+      { "e": "🐎", "n": "con ngựa" },
+      { "e": "🐄", "n": "con bò" },
+      { "e": "🐖", "n": "con lợn" },
+      { "e": "🦌", "n": "con hươu" }
+    ],
+    "sea": [
+      { "e": "🐟", "n": "con cá" },
+      { "e": "🐬", "n": "cá heo" },
+      { "e": "🐳", "n": "cá voi" },
+      { "e": "🦈", "n": "cá mập" },
+      { "e": "🐙", "n": "bạch tuộc" },
+      { "e": "🦀", "n": "con cua" }
+    ],
+    "bug": [
+      { "e": "🦋", "n": "con bướm" },
+      { "e": "🐞", "n": "bọ rùa" },
+      { "e": "🐝", "n": "con ong" },
+      { "e": "🐜", "n": "con kiến" },
+      { "e": "🐌", "n": "ốc sên" },
+      { "e": "🐛", "n": "con sâu" }
+    ],
+    "other": [
+      { "e": "🐘", "n": "con voi" },
+      { "e": "🦒", "n": "hươu cao cổ" },
+      { "e": "🐢", "n": "con rùa" },
+      { "e": "🐇", "n": "con thỏ" },
+      { "e": "🦔", "n": "con nhím" },
+      { "e": "🐿️", "n": "con sóc" },
+      { "e": "🦖", "n": "khủng long" },
+      { "e": "🐊", "n": "cá sấu" }
+    ]
+  }
+}

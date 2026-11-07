@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { colors, colorMixes, WHITE } from "../data";
+import { colors, mixes as colorMixes, white as WHITE } from "../databases/colors.json";
 import { pickOne, pickN, choicesWith } from "../utils";
 import ModeTabs, { LEARN_PLAY } from "../components/ModeTabs";
 import ChoiceQuiz from "../components/ChoiceQuiz";

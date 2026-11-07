@@ -1,0 +1,12 @@
+{
+  "_ghi_chu": "Trò Đếm con vật. maxCount = số con nhiều nhất trên màn hình.",
+  "maxCount": 5,
+  "sets": [
+    { "animal": "🐱", "name": "mèo" },
+    { "animal": "🐶", "name": "chó" },
+    { "animal": "🐰", "name": "thỏ" },
+    { "animal": "🐥", "name": "gà con" },
+    { "animal": "🐸", "name": "ếch" },
+    { "animal": "🐼", "name": "gấu trúc" }
+  ]
+}

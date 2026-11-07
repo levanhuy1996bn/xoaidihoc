@@ -1,0 +1,17 @@
+{
+  "_ghi_chu": "Việc nhỏ mỗi ngày: xếp các bước theo đúng thứ tự. tiers: steps = số bước mỗi màn (nếu việc có ít bước hơn thì dùng tất cả). first: việc dùng cho màn 1, 2, … trước khi chọn ngẫu nhiên.",
+  "tiers": [
+    { "from": 1, "steps": 3, "allow": 1 },
+    { "from": 4, "steps": 4, "allow": 1 },
+    { "from": 9, "steps": 5, "allow": 2 }
+  ],
+  "first": ["brush", "wash", "brush", "banana"],
+  "routines": [
+    { "id": "brush", "name": "Đánh răng", "ask": "Đánh răng thế nào nhỉ?", "steps": [{ "e": "🪥", "n": "Lấy bàn chải" }, { "e": "🧴", "n": "Bóp kem đánh răng" }, { "e": "😁", "n": "Chải răng thật kỹ" }, { "e": "🥛", "n": "Súc miệng" }, { "e": "🚰", "n": "Rửa sạch bàn chải" }] },
+    { "id": "wash", "name": "Rửa tay", "ask": "Rửa tay thế nào nhỉ?", "steps": [{ "e": "🚰", "n": "Mở vòi nước" }, { "e": "🧼", "n": "Xoa xà phòng" }, { "e": "👐", "n": "Chà hai bàn tay" }, { "e": "💦", "n": "Rửa sạch xà phòng" }, { "e": "🧻", "n": "Lau khô tay" }] },
+    { "id": "banana", "name": "Ăn chuối", "ask": "Ăn chuối thế nào nhỉ?", "steps": [{ "e": "🍌", "n": "Lấy quả chuối" }, { "e": "👐", "n": "Bóc vỏ chuối" }, { "e": "😋", "n": "Ăn chuối" }, { "e": "🗑️", "n": "Bỏ vỏ vào thùng rác" }] },
+    { "id": "bed", "name": "Đi ngủ", "ask": "Trước khi đi ngủ làm gì nhỉ?", "steps": [{ "e": "🛁", "n": "Đi tắm" }, { "e": "👚", "n": "Mặc đồ ngủ" }, { "e": "🪥", "n": "Đánh răng" }, { "e": "📖", "n": "Nghe kể chuyện" }, { "e": "😴", "n": "Đi ngủ" }] },
+    { "id": "school", "name": "Buổi sáng đi học", "ask": "Buổi sáng đi học làm gì nhỉ?", "steps": [{ "e": "⏰", "n": "Thức dậy" }, { "e": "🪥", "n": "Đánh răng" }, { "e": "🍳", "n": "Ăn sáng" }, { "e": "🎒", "n": "Đeo cặp" }, { "e": "🏫", "n": "Đến lớp" }] },
+    { "id": "plant", "name": "Trồng cây", "ask": "Trồng cây thế nào nhỉ?", "steps": [{ "e": "🕳️", "n": "Đào một cái hố" }, { "e": "🌰", "n": "Gieo hạt" }, { "e": "💧", "n": "Tưới nước" }, { "e": "🌱", "n": "Cây nảy mầm" }, { "e": "🌻", "n": "Cây ra hoa" }] }
+  ]
+}

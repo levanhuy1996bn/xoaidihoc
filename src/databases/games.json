@@ -1,0 +1,33 @@
+{
+  "_ghi_chu": "Trang chủ và danh sách màn. id phải khớp với danh sách trong App.jsx. group: learn, think, life, play, memory. Trong title dùng \\n để xuống dòng.",
+  "home": { "greeting": "XIN CHÀO BÉ YÊU 👋", "title": "Hôm nay mình\nhọc gì nhỉ?", "subtitle": "Chơi vui, học giỏi mỗi ngày!", "art": "🥭", "dailyIcon": "🌻", "dailyTitle": "Bé chăm học", "dailySubtitle": "Mỗi trò chơi là một khám phá!", "noteTitle": "Dành cho bé 3–5 tuổi", "noteText": "Nội dung đơn giản, hình ảnh vui nhộn và thao tác dễ dàng." },
+  "sections": [
+    { "group": "learn", "title": "Góc học tập của bé", "subtitle": "Học bằng hình ảnh và âm thanh", "icon": "📚" },
+    { "group": "think", "title": "Thử thách tư duy", "subtitle": "Quan sát, so sánh và suy luận", "icon": "🧠" },
+    { "group": "life", "title": "Cuộc sống quanh bé", "subtitle": "Tập làm những việc hằng ngày", "icon": "🏡" },
+    { "group": "play", "title": "Trò chơi vui", "subtitle": "Chơi mà học, học mà chơi", "icon": "🎈" },
+    { "group": "memory", "title": "Góc kỷ niệm", "subtitle": "Những bức ảnh đáng yêu của bé", "icon": "📸" }
+  ],
+  "games": [
+    { "id": "alphabet", "group": "learn", "emoji": "🔤", "title": "Chữ cái", "subtitle": "Nghe âm, xem hình", "color": "#FFF0D9" },
+    { "id": "numbers", "group": "learn", "emoji": "🔢", "title": "Con số", "subtitle": "Số 1–20, lớn và bé", "color": "#E2F4FF" },
+    { "id": "colors", "group": "learn", "emoji": "🎨", "title": "Màu sắc", "subtitle": "Tìm màu, pha màu", "color": "#FFE8EF" },
+    { "id": "shapes", "group": "learn", "emoji": "🔷", "title": "Hình dạng", "subtitle": "Tròn, vuông, tam giác", "color": "#E6F0FF" },
+    { "id": "zoo", "group": "learn", "emoji": "🦁", "title": "Động vật", "subtitle": "Tiếng kêu, nơi sống", "color": "#FFF3D6" },
+    { "id": "produce", "group": "learn", "emoji": "🥭", "title": "Rau củ, trái cây", "subtitle": "Tên gọi và màu sắc", "color": "#E8F7E4" },
+    { "id": "body", "group": "learn", "emoji": "🧒", "title": "Cơ thể bé", "subtitle": "Mắt, mũi, tay, chân", "color": "#FFEDE3" },
+    { "id": "weather", "group": "learn", "emoji": "🌦️", "title": "Thời tiết", "subtitle": "Nắng, mưa và các mùa", "color": "#E4F4FA" },
+    { "id": "odd", "group": "think", "emoji": "🔍", "title": "Ai khác biệt?", "subtitle": "Tìm hình không cùng nhóm", "color": "#FFF0D9" },
+    { "id": "shadow", "group": "think", "emoji": "👤", "title": "Tìm bóng", "subtitle": "Kéo bạn vào đúng bóng", "color": "#ECE8FF" },
+    { "id": "pattern", "group": "think", "emoji": "🔁", "title": "Tìm quy luật", "subtitle": "Hình nào tiếp theo?", "color": "#E5F8E9" },
+    { "id": "jigsaw", "group": "think", "emoji": "🧩", "title": "Ghép hình bí ẩn", "subtitle": "Ghép mảnh, đoán hình", "color": "#FFE8EF" },
+    { "id": "routine", "group": "life", "emoji": "🪥", "title": "Việc nhỏ mỗi ngày", "subtitle": "Đánh răng, rửa tay đúng thứ tự", "color": "#E2F4FF" },
+    { "id": "market", "group": "life", "emoji": "🛒", "title": "Siêu thị tí hon", "subtitle": "Mua đúng đồ trong danh sách", "color": "#FFF3D6" },
+    { "id": "room", "group": "life", "emoji": "🧸", "title": "Bé dọn phòng", "subtitle": "Cất đồ vào đúng chỗ", "color": "#E8F7E4" },
+    { "id": "traffic", "group": "life", "emoji": "🚦", "title": "Giao thông", "subtitle": "Đèn tín hiệu, biển báo", "color": "#FFEDE3" },
+    { "id": "animals", "group": "play", "emoji": "🐾", "title": "Đếm con vật", "subtitle": "Cùng đếm bạn thú", "color": "#E5F8E9" },
+    { "id": "drag", "group": "play", "emoji": "🧺", "title": "Kéo thả số", "subtitle": "Đưa số vào chiếc giỏ", "color": "#F3E8FF" },
+    { "id": "race", "group": "play", "emoji": "🏁", "title": "Đua vui", "subtitle": "Đua thú, đua xe", "color": "#FFF0D9" },
+    { "id": "gallery", "group": "memory", "emoji": "🖼️", "title": "Gallery", "subtitle": "Ảnh kỷ niệm của bé", "color": "#FFF4E0", "cta": "Xem ảnh →" }
+  ]
+}
