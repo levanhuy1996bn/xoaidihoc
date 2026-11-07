@@ -1,6 +1,6 @@
 {
-  "_ghi_chu": "Trang chủ và danh sách màn. id phải khớp với danh sách trong App.jsx. group: learn, think, life, play, memory. Trong title dùng \\n để xuống dòng. dailySubtitle: {done}/{total} = số nhiệm vụ Xoài phiêu lưu đã xong hôm nay.",
-  "home": { "greeting": "XIN CHÀO BÉ YÊU 👋", "title": "Hôm nay mình\nhọc gì nhỉ?", "subtitle": "Chơi vui, học giỏi mỗi ngày!", "art": "🥭", "dailyIcon": "🐱", "dailyTitle": "Xoài phiêu lưu 🗺️", "dailySubtitle": "Nhiệm vụ hôm nay: {done}/{total} · chạm để xem", "noteTitle": "Dành cho bé 3–5 tuổi", "noteText": "Nội dung đơn giản, hình ảnh vui nhộn và thao tác dễ dàng." },
+  "_ghi_chu": "Trang chủ và danh sách màn. id phải khớp với danh sách trong App.jsx. group: learn, think, life, play, memory. Trong title dùng \\n để xuống dòng. Đường dẫn trò chơi: /tro-choi/<id> (màn đang chơi không lưu trên đường dẫn). footer = dòng chữ cuối trang. dailySubtitle: {done}/{total} = số nhiệm vụ Xoài phiêu lưu đã xong hôm nay.",
+  "home": { "greeting": "XIN CHÀO BÉ YÊU 👋", "title": "Hôm nay mình\nhọc gì nhỉ?", "subtitle": "Chơi vui, học giỏi mỗi ngày!", "art": "🥭", "dailyIcon": "🗺️", "dailyTitle": "Xoài phiêu lưu", "dailySubtitle": "Nhiệm vụ hôm nay: {done}/{total} · chạm để xem", "noteTitle": "Dành cho bé 3–5 tuổi", "noteText": "Nội dung đơn giản, hình ảnh vui nhộn và thao tác dễ dàng.", "footer": "Made with 💛 by Xoài Family & Dưa Góp Family" },
   "sections": [
     { "group": "learn", "title": "Góc học tập của bé", "subtitle": "Học bằng hình ảnh và âm thanh", "icon": "📚" },
     { "group": "think", "title": "Thử thách tư duy", "subtitle": "Quan sát, so sánh và suy luận", "icon": "🧠" },

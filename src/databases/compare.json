@@ -9,7 +9,7 @@
     { "from": 16, "min": 3, "max": 10, "gap": 1, "ask": ["more", "less"], "mixed": true, "scatter": true, "bigFew": true, "equal": true, "allow": 2 }
   ],
   "animals": [
-    { "e": "🐱", "n": "con mèo" },
+    { "e": "😸", "n": "con mèo" },
     { "e": "🐶", "n": "con chó" },
     { "e": "🐰", "n": "con thỏ" },
     { "e": "🐥", "n": "bạn gà con" },

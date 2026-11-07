@@ -1,9 +1,11 @@
 import { House, Trophy, Map } from "lucide-react";
 
-export default function BottomNav({ page, setPage }) {
+// active: "home" | "adventure" | "progress"; onNav(tên) để chuyển trang
+export default function BottomNav({ active, onNav }) {
+  const item = (name, Icon, label) => <button className={active === name ? "active" : ""} aria-current={active === name ? "page" : undefined} onClick={() => onNav(name)}><Icon/><span>{label}</span></button>;
   return <nav className="bottom-nav">
-    <button className={page === "home" ? "active" : ""} onClick={() => setPage("home")}><House/><span>Trang chủ</span></button>
-    <button className={page === "adventure" ? "active" : ""} onClick={() => setPage("adventure")}><Map/><span>Phiêu lưu</span></button>
-    <button className={page === "progress" ? "active" : ""} onClick={() => setPage("progress")}><Trophy/><span>Thành tích</span></button>
+    {item("home", House, "Trang chủ")}
+    {item("adventure", Map, "Phiêu lưu")}
+    {item("progress", Trophy, "Thành tích")}
   </nav>;
 }

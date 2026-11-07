@@ -452,3 +452,4 @@ footer{text-align:center;font-size:10px;color:#b6adba;padding:15px}.back-button{
 .cmp-equal.correct{border-color:#6cc58a;background:#eafaef;color:#3f8a57;animation:pop .35s}
 .cmp-equal.wrong{opacity:.45;animation:shake .35s}
 @media(max-width:370px){.cmp-side{height:180px}.math-obj{font-size:28px}.math-eq{font-size:26px}}
+

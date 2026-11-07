@@ -125,6 +125,8 @@ be-vui-hoc-react-vite/
 │   │   ├── AnimalCounting.jsx  DragNumbers.jsx
 │   │   └── Gallery.jsx
 │   ├── App.jsx               # Trang chủ, nối id màn với component, giọng đọc, số sao
+│   ├── router.js             # Router nhỏ dùng History API (đường dẫn, nút Back)
+│   ├── routes.js             # Danh sách đường dẫn, danh sách trò có màn (LEVEL_GAMES)
 │   ├── utils.js              # Hàm ngẫu nhiên (có seed theo số màn), tạo đáp án
 │   ├── main.jsx
 │   └── style.css
@@ -363,6 +365,25 @@ Các trò **Thử thách tư duy** và **Cuộc sống quanh bé** chơi theo m�
 - **Màn vô tận:** không cần tạo sẵn từng màn. `makeLevel` sinh màn từ số màn và bảng `tiers` trong JSON. Mỗi số màn dùng một hạt giống ngẫu nhiên cố định, nên "màn 7" lần nào chơi cũng giống nhau.
 - **Tăng độ khó** bằng số lượng hình, mức độ giống nhau và số bước, không bằng cách bấm giờ (phù hợp bé 3–5 tuổi).
 
+### Đường dẫn
+
+Mỗi màn hình có đường dẫn riêng, nên tải lại trang vẫn ở đúng chỗ, nút Back của điện thoại lùi về màn trước, và gửi được link thẳng tới một trò:
+
+| Đường dẫn | Màn hình |
+|---|---|
+| `/` | Trang chủ |
+| `/tro-choi/<id>` | Một trò (id trong `games.json`), vd. `/tro-choi/odd` |
+| `/lop`, `/lop/diem-danh`, `/lop/vong-quay`, `/lop/ai-day`, `/lop/bang-vang` | Lớp Dưa Góp (slug trong `family.json` → `screens`) |
+| `/phieu-luu`, `/phieu-luu/nhiem-vu`, `/phieu-luu/thu-cung`, `/phieu-luu/cua-hang`, `/phieu-luu/huy-hieu` | Xoài phiêu lưu (slug trong `adventure.json` → `tabs`) |
+| `/thanh-tich` | Thành tích |
+
+- **Nút "Quay lại"** trong trò đưa về nơi đã mở trò (trang chủ hoặc Xoài phiêu lưu), kể cả khi đang chơi giữa màn; nút "☰ Các màn" về bản đồ màn. Mở link / vừa tải lại thì "Quay lại" về trang chủ.
+- **Màn đang chơi không lưu trên đường dẫn:** tải lại khi đang chơi trò có màn thì về bản đồ màn, bé tự chọn lại màn (sao đã lưu không mất).
+- **Mở link / tải lại thẳng vào trò** thì vào chơi luôn, nhưng câu hỏi đầu chưa được đọc (trình duyệt chỉ cho đọc to sau khi người dùng chạm vào trang). Chạm vào bất kỳ đâu là câu hỏi được đọc; chạm thẳng vào đáp án thì đọc lời khen / "thử lại" như bình thường.
+- Link sai (trò không có, đường dẫn lạ…) tự chuyển về trang chủ.
+- Đổi tab nhỏ (tab trong Xoài phiêu lưu, tab Xoài Vui Học / Lớp) không tạo thêm bước Back.
+- Trên iPhone, vuốt từ mép trái để lùi khi đang kéo thả gần mép có thể lùi nhầm một màn (mở bằng biểu tượng trên màn hình chính thì không bị).
+
 ---
 
 ## 11. Dữ liệu và tiến độ
@@ -386,7 +407,7 @@ Các trò **Thử thách tư duy** và **Cuộc sống quanh bé** chơi theo m�
 | Máy đọc sai một từ | Do giọng đọc của thiết bị; đổi cách viết câu trong `src/databases/*.json` hoặc thay bằng file âm thanh thu sẵn |
 | Build lỗi sau khi sửa JSON | Kiểm tra dấu phẩy, dấu nháy kép (xem mục 9) |
 | Vercel build lỗi `Could not resolve "./games/..."` | Tên file sai chữ hoa/thường. macOS không phân biệt nhưng Vercel (Linux) có, ví dụ `body.jsx` ≠ `Body.jsx` |
-| Tải lại trang bị 404 | Kiểm tra `vercel.json` có trong repo |
+| Tải lại trang bị 404 | Kiểm tra `vercel.json` có trong repo. Deploy chỗ khác (Netlify, GitHub Pages…) cũng phải cấu hình cho mọi đường dẫn trả về `index.html` |
 | Push bị từ chối (`publickey`) | Xem mục 6 |
 
 ---
