@@ -1,0 +1,33 @@
+{
+  "_ghi_chu": "Thời tiết và thiên nhiên. say = câu đọc khi bé chạm; ask = câu hỏi về mùa; gear = câu hỏi 'Trời ... con cần mang gì?'.",
+  "sections": [
+    { "key": "weather", "title": "☁️ THỜI TIẾT" },
+    { "key": "seasons", "title": "🗓️ CÁC MÙA TRONG NĂM" },
+    { "key": "nature", "title": "🌳 THIÊN NHIÊN" }
+  ],
+  "weather": [
+    { "name": "Trời nắng", "emoji": "☀️", "say": "Trời nắng, ông mặt trời chiếu sáng" },
+    { "name": "Trời mưa", "emoji": "🌧️", "say": "Trời mưa, nhớ mang ô nhé" },
+    { "name": "Trời nhiều mây", "emoji": "☁️", "say": "Trời nhiều mây, mây trắng bay bay" },
+    { "name": "Trời có gió", "emoji": "🌬️", "say": "Trời có gió, lá cây đung đưa" },
+    { "name": "Cầu vồng", "emoji": "🌈", "say": "Cầu vồng có bảy màu thật đẹp" },
+    { "name": "Sấm sét", "emoji": "⛈️", "say": "Có sấm sét, con ở trong nhà nhé" }
+  ],
+  "seasons": [
+    { "name": "Mùa xuân", "emoji": "🌸", "say": "Mùa xuân hoa nở, cả nhà đón Tết", "ask": "Mùa nào hoa nở, cả nhà đón Tết?" },
+    { "name": "Mùa hè", "emoji": "🏖️", "say": "Mùa hè nắng nóng, được đi tắm biển", "ask": "Mùa nào nắng nóng, được đi tắm biển?" },
+    { "name": "Mùa thu", "emoji": "🍂", "say": "Mùa thu lá vàng rơi, có Tết Trung thu", "ask": "Mùa nào lá vàng rơi?" },
+    { "name": "Mùa đông", "emoji": "🧣", "say": "Mùa đông trời lạnh, con mặc áo ấm", "ask": "Mùa nào trời lạnh, phải mặc áo ấm?" }
+  ],
+  "nature": [
+    { "name": "Cây xanh", "emoji": "🌳", "say": "Cây xanh cho bóng mát" },
+    { "name": "Bông hoa", "emoji": "🌼", "say": "Bông hoa thơm và đẹp" },
+    { "name": "Ngọn núi", "emoji": "⛰️", "say": "Ngọn núi rất cao" },
+    { "name": "Biển", "emoji": "🌊", "say": "Biển rộng có nhiều sóng" }
+  ],
+  "gear": [
+    { "when": "Trời mưa", "emoji": "🌧️", "item": { "e": "☂️", "n": "cái ô" } },
+    { "when": "Trời nắng", "emoji": "☀️", "item": { "e": "🧢", "n": "mũ" } },
+    { "when": "Trời lạnh", "emoji": "🥶", "item": { "e": "🧣", "n": "khăn len" } }
+  ]
+}

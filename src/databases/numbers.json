@@ -1,0 +1,5 @@
+{
+  "_ghi_chu": "Màn Con số. max = số lớn nhất; countingEmojis = hình dùng để đếm khi so sánh nhiều/ít.",
+  "max": 20,
+  "countingEmojis": ["⭐", "🍎", "🎈", "🐟", "🌸", "🍓", "🚗", "🐞"]
+}

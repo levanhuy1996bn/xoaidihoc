@@ -1,12 +1,7 @@
-import { useState, useRef, useMemo } from "react";
+import { useState, useRef, useMemo, useEffect } from "react";
 import { makeOptions } from "../utils";
-
-const rounds = [
-  { count: 2, emoji: "🍓", label: "quả dâu" },
-  { count: 3, emoji: "🍎", label: "quả táo" },
-  { count: 4, emoji: "🐣", label: "chú gà" },
-  { count: 5, emoji: "🦋", label: "con bướm" }
-];
+import { rounds } from "../databases/drag-numbers.json";
+import { TRY_AGAIN } from "../components/ChoiceQuiz";
 
 export default function DragNumbers({ onCorrect, speak }) {
   const [round,setRound] = useState(0);
@@ -17,6 +12,10 @@ export default function DragNumbers({ onCorrect, speak }) {
   const targetRef = useRef(null);
   const current = rounds[round];
   const options = useMemo(() => makeOptions(current.count), [round]);
+  const ask = `Có bao nhiêu ${current.label}?`;
+  const say = `${ask} Con hãy đếm rồi kéo số đúng vào giỏ nhé`;
+
+  useEffect(() => { speak(say); }, [round]); // tự đọc câu hỏi khi mở và khi sang màn mới
 
   function startDrag(e,n) {
     if(placed!==null) return; // đã đúng rồi thì không cộng sao thêm
@@ -33,16 +32,16 @@ export default function DragNumbers({ onCorrect, speak }) {
     if(inside) {
       if(dragging===current.count) {
         setPlaced(dragging); setMessage("Chính xác! Con giỏi lắm! 🌟"); onCorrect(); speak("Chính xác! Con giỏi lắm!");
-      } else { setMessage("Chưa đúng, mình thử lại nhé! 💛"); speak("Chưa đúng, mình thử lại nhé"); }
+      } else { setMessage(TRY_AGAIN + "! 💛"); speak(TRY_AGAIN); }
     }
     setDragging(null);
   }
   function next() { setRound((round+1)%rounds.length); setPlaced(null); setMessage("Kéo một con số vào chiếc giỏ nhé!"); }
 
   return <section className="game-panel">
-    <div className="section-kicker">🧩 BÉ TẬP KÉO THẢ</div>
-    <h2>Đếm rồi kéo số vào giỏ!</h2>
-    <div className="drag-instruction">Có bao nhiêu {current.label}?</div>
+    <div className="section-kicker">🧺 BÉ TẬP KÉO THẢ</div>
+    <div className="quiz-question" style={{ margin: "8px 0 6px" }}><h3>{ask}</h3>
+      <button className="replay-button" onClick={() => speak(say)} aria-label="Nghe lại câu hỏi">🔊</button></div>
     <div className="drag-objects">{Array.from({length:current.count},(_,i)=><span key={i}>{current.emoji}</span>)}</div>
     <div ref={targetRef} className={placed!==null?"drop-zone success":"drop-zone"}>
       <span className="basket">🧺</span>

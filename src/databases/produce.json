@@ -1,0 +1,24 @@
+{
+  "_ghi_chu": "Rau củ và trái cây. type: fruit = trái cây, veg = rau củ. color = tên màu (null nếu không hỏi về màu).",
+  "items": [
+    { "name": "Quả táo", "emoji": "🍎", "type": "fruit", "color": "Đỏ" },
+    { "name": "Quả chuối", "emoji": "🍌", "type": "fruit", "color": "Vàng" },
+    { "name": "Quả cam", "emoji": "🍊", "type": "fruit", "color": "Cam" },
+    { "name": "Chùm nho", "emoji": "🍇", "type": "fruit", "color": "Tím" },
+    { "name": "Quả dâu tây", "emoji": "🍓", "type": "fruit", "color": "Đỏ" },
+    { "name": "Quả dưa hấu", "emoji": "🍉", "type": "fruit", "color": null },
+    { "name": "Quả dứa", "emoji": "🍍", "type": "fruit", "color": "Vàng" },
+    { "name": "Quả lê", "emoji": "🍐", "type": "fruit", "color": "Xanh lá" },
+    { "name": "Củ cà rốt", "emoji": "🥕", "type": "veg", "color": "Cam" },
+    { "name": "Rau cải", "emoji": "🥬", "type": "veg", "color": "Xanh lá" },
+    { "name": "Bông cải xanh", "emoji": "🥦", "type": "veg", "color": "Xanh lá" },
+    { "name": "Bắp ngô", "emoji": "🌽", "type": "veg", "color": "Vàng" },
+    { "name": "Củ khoai tây", "emoji": "🥔", "type": "veg", "color": "Nâu" },
+    { "name": "Quả cà tím", "emoji": "🍆", "type": "veg", "color": "Tím" },
+    { "name": "Quả dưa chuột", "emoji": "🥒", "type": "veg", "color": "Xanh lá" }
+  ],
+  "types": {
+    "fruit": { "name": "Trái cây", "emoji": "🍒" },
+    "veg": { "name": "Rau củ", "emoji": "🥗" }
+  }
+}

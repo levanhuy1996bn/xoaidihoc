@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { produce, produceTypes } from "../data";
+import { items as produce, types as produceTypes } from "../databases/produce.json";
 import { pickOne, choicesWith } from "../utils";
 import ModeTabs, { LEARN_PLAY } from "../components/ModeTabs";
 import ChoiceQuiz from "../components/ChoiceQuiz";

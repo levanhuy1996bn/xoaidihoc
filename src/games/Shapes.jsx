@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { shapes } from "../data";
+import { shapes } from "../databases/shapes.json";
 import { pickOne, pickN, choicesWith, shuffle } from "../utils";
 import ModeTabs, { LEARN_PLAY } from "../components/ModeTabs";
 import ChoiceQuiz from "../components/ChoiceQuiz";

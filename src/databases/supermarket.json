@@ -1,0 +1,42 @@
+{
+  "_ghi_chu": "Siêu thị tí hon. tiers: items = số món trong danh sách, maxQty = số lượng tối đa mỗi món, shelf = số món trên kệ, similar = thêm món dễ nhầm (vd. táo đỏ / táo xanh). n là tên gọi kèm loại từ (quả, hộp, ổ…).",
+  "intro": "Mẹ nhờ con mua",
+  "tiers": [
+    { "from": 1, "items": 2, "maxQty": 1, "shelf": 6, "similar": false, "allow": 1 },
+    { "from": 4, "items": 3, "maxQty": 1, "shelf": 8, "similar": false, "allow": 1 },
+    { "from": 7, "items": 2, "maxQty": 2, "shelf": 9, "similar": false, "allow": 2 },
+    { "from": 11, "items": 3, "maxQty": 3, "shelf": 9, "similar": true, "allow": 2 },
+    { "from": 16, "items": 4, "maxQty": 3, "shelf": 12, "similar": true, "allow": 3 }
+  ],
+  "products": [
+    { "e": "🍎", "n": "quả táo đỏ" },
+    { "e": "🍏", "n": "quả táo xanh" },
+    { "e": "🍌", "n": "quả chuối" },
+    { "e": "🍇", "n": "chùm nho" },
+    { "e": "🍊", "n": "quả cam" },
+    { "e": "🍋", "n": "quả chanh" },
+    { "e": "🍓", "n": "quả dâu" },
+    { "e": "🍉", "n": "quả dưa hấu" },
+    { "e": "🥕", "n": "củ cà rốt" },
+    { "e": "🥦", "n": "bông cải xanh" },
+    { "e": "🌽", "n": "bắp ngô" },
+    { "e": "🍅", "n": "quả cà chua" },
+    { "e": "🥚", "n": "quả trứng" },
+    { "e": "🥛", "n": "hộp sữa" },
+    { "e": "🧃", "n": "hộp nước ép" },
+    { "e": "🍞", "n": "ổ bánh mì" },
+    { "e": "🧀", "n": "miếng phô mai" },
+    { "e": "🍪", "n": "cái bánh quy" },
+    { "e": "🍩", "n": "cái bánh vòng" },
+    { "e": "🐟", "n": "con cá" },
+    { "e": "🍦", "n": "cây kem" }
+  ],
+  "similar": [
+    ["🍎", "🍏"],
+    ["🍊", "🍋"],
+    ["🥛", "🧃"],
+    ["🍪", "🍩"],
+    ["🍅", "🍎"],
+    ["🍌", "🌽"]
+  ]
+}

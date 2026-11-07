@@ -1,0 +1,52 @@
+{
+  "_ghi_chu": "Ai khác biệt? Mỗi màn có questionsPerLevel câu. tiers: từ màn 'from' trở đi dùng 'items' hình; close = true dùng các nhóm gần giống nhau (khó hơn). allow = số lần sai tối đa để vẫn được 2 sao.",
+  "questionsPerLevel": 3,
+  "tiers": [
+    { "from": 1, "items": 4, "close": false, "allow": 1 },
+    { "from": 5, "items": 4, "close": true, "allow": 1 },
+    { "from": 10, "items": 6, "close": false, "allow": 1 },
+    { "from": 15, "items": 6, "close": true, "allow": 2 }
+  ],
+  "groups": {
+    "fruit": {
+      "name": "trái cây",
+      "items": ["🍎", "🍌", "🍇", "🍊", "🍓", "🍉", "🍍", "🍐", "🍒", "🥭"]
+    },
+    "veg": {
+      "name": "rau củ",
+      "items": ["🥕", "🥦", "🌽", "🍆", "🥒", "🥔", "🥬", "🧅"]
+    },
+    "animal": {
+      "name": "con vật",
+      "closeName": "con vật sống trên cạn",
+      "items": ["🐶", "🐱", "🐰", "🐻", "🐼", "🦁", "🐯", "🐮", "🐷", "🐘"]
+    },
+    "sea": {
+      "name": "con vật dưới nước",
+      "items": ["🐟", "🐙", "🦀", "🐬", "🐳", "🦈", "🐠", "🦑"]
+    },
+    "vehicle": {
+      "name": "xe cộ",
+      "closeName": "xe chạy trên đường",
+      "items": ["🚗", "🚌", "🚲", "🛵", "🚓", "🚑", "🚒", "🚚"]
+    },
+    "air": {
+      "name": "vật bay trên trời",
+      "items": ["✈️", "🚁", "🚀", "🎈", "🛸", "🪂"]
+    },
+    "clothes": {
+      "name": "quần áo",
+      "items": ["👕", "👖", "👗", "🧦", "🧥", "🩳"]
+    },
+    "toy": {
+      "name": "đồ chơi",
+      "items": ["🧸", "🪀", "⚽", "🧩", "🎲", "🪆", "🪁"]
+    }
+  },
+  "distant": ["fruit", "animal", "vehicle", "clothes", "toy"],
+  "close": [
+    ["fruit", "veg"],
+    ["animal", "sea"],
+    ["vehicle", "air"]
+  ]
+}

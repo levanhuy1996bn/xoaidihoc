@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { animals, habitats, foods } from "../data";
+import { animals, habitats, foods } from "../databases/animals.json";
 import { pickOne, choicesWith, shuffle, pickN } from "../utils";
 import ModeTabs, { LEARN_PLAY } from "../components/ModeTabs";
 import ChoiceQuiz from "../components/ChoiceQuiz";

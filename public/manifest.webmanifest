@@ -1,0 +1,22 @@
+{
+  "name": "Xoài Vui Học",
+  "short_name": "Xoài Vui Học",
+  "description": "Trò chơi học chữ, học số và khám phá thế giới dành cho bé 3–5 tuổi.",
+  "lang": "vi",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fffaf3",
+  "theme_color": "#fff8ed",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

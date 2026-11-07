@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { bodyParts, bodyUses } from "../data";
+import { parts as bodyParts, uses as bodyUses } from "../databases/body.json";
 import { pickOne, choicesWith } from "../utils";
 import ModeTabs, { LEARN_PLAY } from "../components/ModeTabs";
 import ChoiceQuiz from "../components/ChoiceQuiz";

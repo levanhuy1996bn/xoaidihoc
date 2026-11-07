@@ -1,0 +1,33 @@
+{
+  "_ghi_chu": "Giao thông. Mỗi màn có questionsPerLevel câu, lấy từ các loại câu hỏi trong 'kinds' của tier. light = đèn tín hiệu, lightPick = chọn đúng đèn, safety = an toàn, sign = biển báo. Trong safety, đáp án đúng luôn là phương án đầu tiên (sẽ được trộn khi chơi); pic: zebra = vẽ vạch kẻ đường.",
+  "questionsPerLevel": 4,
+  "tiers": [
+    { "from": 1, "kinds": ["light", "lightPick"], "allow": 1 },
+    { "from": 4, "kinds": ["light", "lightPick", "safety"], "allow": 1 },
+    { "from": 8, "kinds": ["light", "safety", "sign"], "allow": 2 }
+  ],
+  "lights": [
+    { "id": "red", "name": "Đèn đỏ", "action": "stop" },
+    { "id": "yellow", "name": "Đèn vàng", "action": "slow" },
+    { "id": "green", "name": "Đèn xanh", "action": "go" }
+  ],
+  "actions": {
+    "stop": { "e": "🛑", "n": "Dừng lại" },
+    "slow": { "e": "🐢", "n": "Đi chậm lại" },
+    "go": { "e": "🚶", "n": "Được đi" }
+  },
+  "safety": [
+    { "ask": "Ngồi xe máy, con phải đội gì?", "options": [{ "e": "⛑️", "n": "Mũ bảo hiểm" }, { "e": "👑", "n": "Vương miện" }, { "e": "🎩", "n": "Mũ ảo thuật" }] },
+    { "ask": "Khi qua đường, con phải làm gì?", "options": [{ "e": "🤝", "n": "Nắm tay người lớn" }, { "e": "🏃", "n": "Chạy thật nhanh" }, { "e": "⚽", "n": "Vừa đi vừa chơi bóng" }] },
+    { "ask": "Con nên chơi ở đâu?", "options": [{ "e": "🏞️", "n": "Công viên" }, { "e": "🛣️", "n": "Lòng đường" }, { "e": "🚦", "n": "Ngã tư" }] },
+    { "ask": "Ngồi ô tô, con cần làm gì?", "options": [{ "e": "💺", "n": "Ngồi yên, thắt dây an toàn" }, { "e": "🙆", "n": "Thò đầu ra cửa sổ" }, { "e": "🤸", "n": "Nhảy trên ghế" }] },
+    { "ask": "Người đi bộ qua đường ở đâu?", "options": [{ "pic": "zebra", "n": "Vạch kẻ đường" }, { "e": "🚧", "n": "Chỗ đang sửa đường" }, { "e": "🛣️", "n": "Giữa đường lớn" }] }
+  ],
+  "signs": [
+    { "e": "⛔", "n": "Cấm đi vào", "ask": "Biển nào báo cấm đi vào?" },
+    { "e": "🚸", "n": "Trẻ em qua đường", "ask": "Biển nào báo có trẻ em qua đường?" },
+    { "e": "🅿️", "n": "Chỗ đỗ xe", "ask": "Biển nào báo chỗ đỗ xe?" },
+    { "e": "🚷", "n": "Cấm người đi bộ", "ask": "Biển nào báo cấm người đi bộ?" },
+    { "e": "🚏", "n": "Trạm xe buýt", "ask": "Đâu là trạm xe buýt?" }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "_ghi_chu": "Trò Đua vui. Mỗi tab là một nhóm tay đua (e = hình, n = tên). minRacers/maxRacers = số tay đua mỗi lượt. Ai về nhất là ngẫu nhiên.",
+  "minRacers": 2,
+  "maxRacers": 5,
+  "tabs": [
+    { "id": "animals", "icon": "🐾", "label": "Động vật", "racers": [{ "e": "🐇", "n": "Thỏ" }, { "e": "🐢", "n": "Rùa" }, { "e": "🐎", "n": "Ngựa" }, { "e": "🐕", "n": "Chó" }, { "e": "🐈", "n": "Mèo" }, { "e": "🐘", "n": "Voi" }, { "e": "🐆", "n": "Báo" }, { "e": "🦒", "n": "Hươu cao cổ" }, { "e": "🐌", "n": "Ốc sên" }, { "e": "🦆", "n": "Vịt" }] },
+    { "id": "vehicles", "icon": "🚗", "label": "Xe cộ", "racers": [{ "e": "🚗", "n": "Ô tô" }, { "e": "🏎️", "n": "Xe đua" }, { "e": "🚌", "n": "Xe buýt" }, { "e": "🚓", "n": "Xe cảnh sát" }, { "e": "🚑", "n": "Xe cứu thương" }, { "e": "🚒", "n": "Xe cứu hỏa" }, { "e": "🚚", "n": "Xe tải" }, { "e": "🚜", "n": "Máy cày" }, { "e": "🛵", "n": "Xe máy" }, { "e": "🚲", "n": "Xe đạp" }] }
+  ]
+}
