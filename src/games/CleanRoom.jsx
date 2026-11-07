@@ -4,6 +4,7 @@ import { pickOne, shuffle, randInt, tierFor } from "../utils";
 import LevelGame from "../components/LevelGame";
 import useDragDrop from "../components/useDragDrop";
 import { TRY_AGAIN } from "../components/ChoiceQuiz";
+import { playCorrect, playWrong } from "../components/sounds";
 
 function makeLevel(level, rng) {
   const t = tierFor(data.tiers, level);
@@ -30,15 +31,13 @@ function Board({ cfg, speak, onFinish }) {
     if (item.bin === binKey) {
       const next = { ...stored, [itemId]: binKey };
       setStored(next);
-      speak(`${item.n} ${data.bins[binKey].say}`);
-      if (Object.keys(next).length === cfg.items.length) {
-        setTimeout(() => speak(data.done), 1000);
-        onFinish(mistakes.current);
-      }
+      // đặt đúng: chỉ kêu "ting", không đọc; xong hết thì LevelGame phát nhạc chúc mừng
+      if (Object.keys(next).length === cfg.items.length) onFinish(mistakes.current);
+      else playCorrect();
     } else {
       mistakes.current += 1;
       setFlash(binKey); setTimeout(() => setFlash(null), 450);
-      speak(TRY_AGAIN);
+      playWrong(); speak(TRY_AGAIN);
     }
   }
   const { itemProps, dropProps, ghost, selected, dragging } = useDragDrop(onDrop);

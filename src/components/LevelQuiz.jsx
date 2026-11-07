@@ -20,8 +20,9 @@ export default function LevelQuiz({ questions, speak, onFinish }) {
     if (done) return;
     if (option.id === q.answer) {
       const praise = q.praise || PRAISE;
-      setDone(true); setMessage(praise + " 🎉"); speak(praise);
-      if (last) onFinish(mistakes.current); // lưu kết quả ngay, không cần bấm thêm nút
+      setDone(true); setMessage(praise + " 🎉");
+      if (last) onFinish(mistakes.current); // lưu ngay; câu cuối không đọc lời khen vì LevelGame phát nhạc + khen hoàn thành màn
+      else speak(praise);
     } else {
       mistakes.current += 1;
       setWrong((w) => [...w, option.id]); setMessage(TRY_AGAIN + "! 💛"); speak(TRY_AGAIN);

@@ -4,9 +4,10 @@ import { useRef, useState } from "react";
  * Kéo thả dùng chung, chạy được bằng ngón tay (Pointer Events).
  * - Kéo một món rồi thả lên ô đích  → onDrop(idMon, idDich)
  * - Hoặc chạm vào món (được chọn) rồi chạm vào ô đích → onDrop(idMon, idDich)
+ * - onPick(idMon) (không bắt buộc): gọi khi bé chạm chọn một món, vd. để đọc tên món
  * Dùng: <div {...itemProps(id, hinhKhiKeo)}> cho món, <div {...dropProps(idDich)}> cho ô đích, và render {ghost}.
  */
-export default function useDragDrop(onDrop) {
+export default function useDragDrop(onDrop, onPick) {
   const [drag, setDrag] = useState(null);
   const [selected, setSelected] = useState(null);
   const current = useRef(null);
@@ -39,6 +40,7 @@ export default function useDragDrop(onDrop) {
           if (target) onDrop(id, target.getAttribute("data-drop"));
         } else {
           setSelected((s) => (s === id ? null : id)); // chạm = chọn món
+          onPick?.(id);
         }
       },
       onPointerCancel() { current.current = null; setDrag(null); },

@@ -16,8 +16,8 @@
     { "id": "ton", "name": "Tớn", "color": "#ffede3", "focus": "45% 35%", "zoom": 1.4 },
     { "id": "linh", "name": "Linh", "color": "#f3e8ff" },
     { "id": "ngan", "name": "Ngân", "color": "#e8f7e4", "focus": "38% 58%", "zoom": 1.8 },
-    { "id": "duy", "name": "Duy", "color": "#fff3d6" },
-    { "id": "kyanh", "name": "Bống", "color": "#e8f7e4", "focus": "58% 25%", "zoom": 1.6 }
+    { "id": "duy", "name": "Chú Duy", "color": "#fff3d6" },
+    { "id": "kyanh", "name": "Cậu Bống", "color": "#e8f7e4", "focus": "58% 25%", "zoom": 1.6 }
   ],
   "funQuestions": [
     { "e": "🎤", "text": "Hát một câu bài hát mà mình thích" },

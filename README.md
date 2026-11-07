@@ -30,6 +30,7 @@ Website học tập tương tác cho bé 3–5 tuổi, làm bằng React + Vite.
 | 👤 Tìm bóng | Kéo con vật vào đúng cái bóng | 2 → 5 bạn, khác loài → cùng loài (toàn chim, toàn côn trùng…) |
 | 🔁 Tìm quy luật | Hình nào tiếp theo / còn thiếu? | AB → AAB, ABC → ABCD, thiếu ở cuối → thiếu ở giữa |
 | 🧩 Ghép hình bí ẩn | Ghép mảnh để đoán hình | 2 → 4 → 6 → 9 mảnh |
+| 🚂 Điền số còn thiếu | Kéo thẻ số vào ô trống của dãy số liên tiếp (đoàn tàu, con sâu, bậc thang, dãy nhà) | 1–5 có chấm gợi ý → 1–10 không bắt đầu từ 1 → 1–20; 1 → 3 ô trống, thêm thẻ thừa |
 | 🪥 Việc nhỏ mỗi ngày | Xếp các bước đúng thứ tự: đánh răng, rửa tay, đi ngủ… | 3 → 4 → 5 bước |
 | 🛒 Siêu thị tí hon | Mua đúng đồ và đủ số lượng trong danh sách | Nhiều món hơn, số lượng 1–3, thêm món dễ nhầm |
 | 🧸 Bé dọn phòng | Kéo đồ vào hộp đồ chơi, tủ quần áo, kệ sách, thùng rác | 2 → 4 chỗ cất, 4 → 11 món |
@@ -58,6 +59,16 @@ Website học tập tương tác cho bé 3–5 tuổi, làm bằng React + Vite.
 | 🎡 Kiểm tra miệng | Vòng quay ảnh người có mặt → "Mời … lên bảng!" + câu hỏi ngẫu nhiên từ các màn học (con vật, màu, đếm, chữ cái, hình, giao thông, cơ thể, thời tiết, thử thách vui), đồng hồ 10 giây, nút xem đáp án, cả nhà chấm 👍/👎. Chế độ **Xoài làm cô giáo** (Xoài không bị gọi) |
 | 👀 Ai đây? | Nhìn ảnh chọn tên, hoặc nghe tên chọn ảnh |
 | 🏆 Bảng vàng | Bục 1-2-3, xếp hạng sao, 👑 lớp trưởng (hiện trên chỗ ngồi), nút "Sang tuần mới" |
+
+**🗺️ Xoài phiêu lưu** – nút **Phiêu lưu** ở thanh dưới, hoặc chạm ô "Xoài phiêu lưu" trên trang chủ. Chạm vào bất cứ thứ gì cũng được đọc to:
+
+| Tab | Nội dung |
+|---|---|
+| 🗺️ Đảo | 5 hòn đảo mở dần theo tổng số sao (0 / 15 / 40 / 80 / 150 ⭐). Chạm đảo đã mở để thấy các trò trên đảo và vào chơi ngay; chạm đảo khóa để nghe còn thiếu bao nhiêu sao. Mở đảo mới có lời chúc mừng |
+| 🎯 Nhiệm vụ | 4 nhiệm vụ làm mới mỗi ngày: trả lời đúng 5 câu, vượt 2 màn, nhận 10 sao, chăm thú cưng. Xong thì bấm nhận xu 🪙 |
+| 🐾 Thú cưng | Cho ăn 🍎, chơi 🧸 (tối đa 3 trái tim mỗi ngày), tặng quà 🎁 để lên cấp. Đổi bạn đồng hành |
+| 🛍️ Cửa hàng | Dùng xu mua đồ cho thú cưng, nhận nuôi Cún, Thỏ, Gấu trúc, Rồng con |
+| 🏆 Huy hiệu | 8 huy hiệu: câu đúng, số sao, số màn, số đảo, số thú cưng, cấp thú cưng, số ngày học liền |
 
 **Thành tích**: số sao, số câu đúng và số màn đã vượt qua, lưu ngay trên trình duyệt (LocalStorage).
 
@@ -90,6 +101,7 @@ be-vui-hoc-react-vite/
 │   │   └── family/           # Ảnh đại diện Lớp Dưa Góp (<id>.jpg, ~360px)
 │   ├── databases/            # TOÀN BỘ dữ liệu nội dung dạng JSON (sửa ở đây, xem mục 9)
 │   ├── family/               # Lớp Dưa Góp: lớp học, điểm danh, vòng quay, Ai đây?, bảng vàng
+│   ├── adventure/            # Xoài phiêu lưu: Adventure.jsx (giao diện), store.js (xu, thú cưng, nhiệm vụ trong ngày)
 │   ├── components/
 │   │   ├── BottomNav.jsx     # Thanh điều hướng dưới
 │   │   ├── ChoiceQuiz.jsx    # Câu hỏi trắc nghiệm của các màn học (mỗi câu đúng 1 sao)
@@ -98,13 +110,14 @@ be-vui-hoc-react-vite/
 │   │   ├── LevelGame.jsx     # Bản đồ màn, chấm 1–3 sao, mở khóa màn sau
 │   │   ├── LevelQuiz.jsx     # Một màn gồm nhiều câu hỏi (dùng cho trò có màn)
 │   │   ├── ModeTabs.jsx      # Tab Học / Chơi
+│   │   ├── sounds.js         # Tiếng "ting" khi đúng, "bụp" khi sai, nhạc chúc mừng khi xong màn (Web Audio, không cần file)
 │   │   └── useDragDrop.jsx   # Kéo thả bằng ngón tay dùng chung
 │   ├── levels/
 │   │   └── progress.js       # Lưu số sao từng màn
 │   ├── games/                # Mỗi màn là 1 file
 │   │   ├── Alphabet.jsx  Numbers.jsx  Colors.jsx  Shapes.jsx
 │   │   ├── AnimalWorld.jsx  FruitsVeggies.jsx  Body.jsx  Weather.jsx
-│   │   ├── OddOneOut.jsx  ShadowMatch.jsx  Patterns.jsx  Jigsaw.jsx
+│   │   ├── OddOneOut.jsx  ShadowMatch.jsx  Patterns.jsx  Jigsaw.jsx  MissingNumbers.jsx
 │   │   ├── DailyRoutine.jsx  Supermarket.jsx  CleanRoom.jsx  Traffic.jsx
 │   │   ├── AnimalCounting.jsx  DragNumbers.jsx
 │   │   └── Gallery.jsx
@@ -248,7 +261,7 @@ Mọi nội dung nằm trong thư mục **`src/databases/`**, mỗi màn một f
 | `produce.json` | Rau củ, trái cây |
 | `body.json` | Bộ phận cơ thể, câu hỏi "Mình dùng gì để…?" |
 | `weather.json` | Thời tiết, các mùa, thiên nhiên, đồ cần mang |
-| `odd-one-out.json`, `shadows.json`, `patterns.json`, `jigsaw.json` | Các trò Thử thách tư duy |
+| `odd-one-out.json`, `shadows.json`, `patterns.json`, `jigsaw.json`, `missing-numbers.json` | Các trò Thử thách tư duy |
 | `routines.json`, `supermarket.json`, `clean-room.json`, `traffic.json` | Các trò Cuộc sống quanh bé |
 | `animal-counting.json`, `drag-numbers.json`, `race.json` | Đếm con vật, Kéo thả số, Đua vui |
 
@@ -342,6 +355,7 @@ Các trò **Thử thách tư duy** và **Cuộc sống quanh bé** chơi theo m�
 
 - **Bản đồ màn:** qua màn trước mới mở khóa màn sau. Mỗi 10 màn có một mốc thưởng 🎁.
 - **Lưu ngay khi xong màn:** kết quả được lưu đúng lúc bé làm xong, thoát ra ngay cũng không mất.
+- **Xong màn:** phát nhạc chúc mừng ngay, rồi đọc "Giỏi quá! Con hoàn thành màn …". Từng trò không tự đọc câu khen lúc xong màn để tiếng không bị chồng nhau. Trò kéo thả liên tục (Bé dọn phòng) chỉ kêu "ting" khi đặt đúng, không đọc.
 - **1–3 sao mỗi màn:** không sai lần nào được 3 sao, sai ít (trong mức `allow`) được 2 sao, còn lại 1 sao. Chơi lại chỉ cộng thêm phần sao tăng lên, không cộng trùng.
 - **Màn vô tận:** không cần tạo sẵn từng màn. `makeLevel` sinh màn từ số màn và bảng `tiers` trong JSON. Mỗi số màn dùng một hạt giống ngẫu nhiên cố định, nên "màn 7" lần nào chơi cũng giống nhau.
 - **Tăng độ khó** bằng số lượng hình, mức độ giống nhau và số bước, không bằng cách bấm giờ (phù hợp bé 3–5 tuổi).
@@ -352,6 +366,7 @@ Các trò **Thử thách tư duy** và **Cuộc sống quanh bé** chơi theo m�
 
 - Số sao lưu trong LocalStorage của trình duyệt với các khoá: `be-vui-stars`, `be-vui-completed` và `be-vui-levels` (số sao từng màn).
 - Lớp Dưa Góp lưu riêng: `dua-gop-seats` (chỗ ngồi), `dua-gop-attendance` (điểm danh trong ngày), `dua-gop-stars` (sao của từng người).
+- Xoài phiêu lưu: `be-vui-adventure` (xu, thú cưng, đồ, nhiệm vụ đã nhận) và `be-vui-today` (đếm câu đúng, sao, màn, lần chăm thú cưng trong ngày và chuỗi ngày học). Đảo, nhiệm vụ, giá, huy hiệu, câu đọc đều sửa trong `src/databases/adventure.json`.
 - Mỗi máy, mỗi trình duyệt, mỗi địa chỉ (localhost / Vercel) có bộ số riêng, không đồng bộ.
 - Mất khi xoá dữ liệu trình duyệt hoặc dùng tab ẩn danh. Đặt lại trong tab **Thành tích**.
 - Muốn đồng bộ nhiều máy hoặc theo dõi nhiều bé → cần thêm backend (ví dụ Supabase, Firebase).
@@ -377,6 +392,6 @@ Các trò **Thử thách tư duy** và **Cuộc sống quanh bé** chơi theo m�
 
 - Trò sáng tạo: Tô màu, Nhà thiết kế nhí, Nhạc sĩ nhí, Lắp ráp robot.
 - Lật thẻ tìm cặp, Nghe âm thanh đoán hình, Tìm đường về nhà.
-- Nhiệm vụ mỗi ngày, Bộ sưu tập sticker, Sách truyện tương tác, Thú cưng đồng hành.
+- Bộ sưu tập sticker, Sách truyện tương tác.
 - File âm thanh thu sẵn (`public/audio/*.mp3`) cho chữ cái, số và câu khen, để mọi máy đọc giống nhau.
 - Khu vực phụ huynh: thời gian học, màn đã chơi, số câu đúng.
